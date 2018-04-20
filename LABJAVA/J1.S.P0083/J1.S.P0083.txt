@@ -1,0 +1,21 @@
+
+LAB211 AssignmentType:Short AssignmentCode:J1.S.P0083LOC:40Slot(s):1
+Title 
+  	Stacks
+ Background 
+       Stack is common data structures in real world such as: a stacks of glasses. Stacks act like “LIFO”, mean LAST IN- FIRST OUT.
+
+Program Specifications
+Write a application to demo how stack works
+Create the MyStack class with following info:
+* Properties
+o stackValues, contain value of the stack
+* Methods
+o push(): Push a value to the stack
+o pop(): Pop a value out from the stack
+o get(): Get a value from the stack
+
+Guidelines
+NA
+
+

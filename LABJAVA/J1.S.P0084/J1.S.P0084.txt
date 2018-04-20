@@ -1,0 +1,16 @@
+
+LAB211 AssignmentType:Short AssignmentCode:J1.S.P0084LOC:60Slot(s):1
+Title 
+  	Large number 
+ Background 
+       Process with big data is common problem in the real world. Let’s start with big data now.
+
+Program Specifications
+Write an application to multiply two digit number inputted from keyboard then display result to screen.
+Note: size of inputted number is unlimited
+
+
+Guidelines
+Try to use array to store the result and two digit number.
+
+
