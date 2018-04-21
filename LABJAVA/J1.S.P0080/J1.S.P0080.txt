@@ -1,0 +1,18 @@
+
+LAB211 AssignmentType:Short AssignmentCode:J1.S.P0080LOC:90Slot(s):2
+Title 
+  	Shapes
+ Background 
+       NA
+Program Specifications
+
+Implement the Shape hierarchy shown in above figure. Each two-dimensional shape should contains method getArea() to calculate the area of it (e.g area of a circle is pi* r2).
+Each three-dimensional shape should contain getArea() and getVolume() methods to calculate the surface area and volume respectively.
+Create a program that u	ses an array of Shape references to objects of each concrete class in the hierarchy. The program should print the object to which each array element refers. 
+Also in the loop that processes all the shapes in the array, determine whether each shape is a two-dimensional shape or three-dimensional shape. If a shape is two-dimensional one, display its area. If a shape is three -dimensional one, display its area and volume.
+Expectation of User interface: 
+NA
+
+Guidelines
+
+
