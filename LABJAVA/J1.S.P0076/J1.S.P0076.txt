@@ -1,0 +1,105 @@
+
+LAB211 AssignmentType:Short AssignmentCode:J1.S.P0076LOC:100Slot(s):2
+Title 
+  	Building module csv file format
+ Background 
+       NA
+Program Specifications
+Customer provides a CSV file include fields: ID, Name, Email, Phone, Address. 
+-  ”Name” field requires each word separated by a whitespace and the first character of word is uppercase.
+- “Address” field requires each work separated by a whitespace.
+However, the CSV file had 2 errors in “Name” and “Address” fields.
+Example:
+Name: Nguyen   van a      	correct format must be Nguyen Van A
+
+Address: Cau Giay     - Ha    Noi    - Viet Nam   Correct format must be: Cau Giay - Ha Noi - Viet Nam
+
+1. Develop a program to Standardize CSV file with menus:import CSV
+2. Format Address
+3. Format Name
+4. Export CSV.
+5. Exit
+- When the user chooses 1: 
+o Require the user input the path of the csv file.
+o Check this file exists or not.
+-  When the user chooses 2 :
+o Remove redundant whitespace of address fields.
+- When the user chooses 3:
+o Remove redundant whitespace of address fields and change the first character of words to uppercase.
+- When the user chooses 4:
+o Require to enter a file name and then export a file with format follow the format which user chose.
+- When the user chooses 5: Finish the program.
+
+Function details: 
+Function 1: Display a menu and ask users to select an option.
+* User runs the program. The program prompts users to select an option.
+* User select an option, perform Function 2.
+Function 2: Perform function based on the selected option..
+* Option 1: Import  CSV
+o Enter file’s path.
+o Check file exist or not.
+* Option 2: Check Address format
+o Remove redundant whitespace of address fields.
+* Option 3: Check Name format.
+o Remove redundant whitespace and change the first character of words to upper cases character.
+* Option 4: Export CSV
+o Enter file name.
+o Export a file with format follow the format which user chose.
+* Option 5: Exit the program.
+Expectation of User interface: 
+ 
+ 
+
+
+
+
+Guidelines
+
+Student must implement methods
+	importCSV
+	formatAddress
+	formatName
+	exportCSV
+in startup code.
+
+
+Use String manipulation.
+File csv’s format following:
+
+ID, Name, Email, Phone, Address
+1, Nguyen van a, anv@gmail.com, 098889999, Cau Giay  -   Ha Noi - Viet Nam
+Function 1: Import csv file.
+o Implement function : void importCSV(String path) throws Exception
+* Input: 
+* Path: File path.
+* The value output: 
+* Set to the global variable dataCSV in class.
+* The list Exception.
+
+
+Function 2: Format Address Colum.
+o Implement function: void formatAddress(String dataCSV) throws Exception
+* Input:
+* dataCSV: data in file csv.
+*  Output values: 
+* Set to global variable dataCSV in class.
+* The list Exception.
+
+
+Function 3: Format Name Colum.
+o Implement function: String formatName(String dataCSV) throws Exception
+* Input:
+* dataCSV: data in file csv.
+*  Output values: 
+* Set to global variable dataCSV  in class.
+* The list Exception.
+
+Function 4: Export CSV.
+o Implement function: void exportCSV(String path) throws Exception
+* Input:
+> Path: new file’s path.
+> File’s information is gotten from global dataCSV in class.
+*  Output values: The Exceptions list.
+
+
+
