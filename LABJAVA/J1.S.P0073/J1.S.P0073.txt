@@ -1,0 +1,73 @@
+
+LAB211 AssignmentType:Short AssignmentCode:J1.S.P0073LOC:100Slot(s):2
+Title 
+  	Program to manage expense, name Handy Expense
+ Background 
+       (Project detached from TTS)
+Program Specifications
+Write a file processing program using to manage expense, named Handy Expense
+Display menu:
+            1. Add an expense
+            2. Display all expenses
+            3. Remove an expense
+            4. Exit
+Selection of users:
+1. If the user chooses 1, add an expense. Each expense includes ID (int), date (String), number (double), content (String). Which ID is increased automatically (i.e. expense ID = last expense ID + 1), the first expense ID: 1.
+2. If the user chooses 2, The program displays a list of data as follows:
+                ID 	Date	 		Amount of money	 	Content
+                1 	11-Apr-2009 		100	 	                        Tuition fee
+                2	 20-Apr-2009		250 		                        Rent house
+                3 	30-Apr-2009 		200 		                        Food
+          Total: 550
+3. If the user chooses 3, prompt user to input the ID program expenses should be deleted, if nonexistent ID, display a message: "Delete an expense fail".
+4. If the user chooses 4, exit program.
+
+Function details: 
+Function 1: Display a menu and ask users to select an option.
+* Users run the program. The program prompts users to select an option.
+* Users select an option, perform Function 2.
+Function 2: Perform function based on the selected option.
+* Option 1: Add an expense
+o Prompt users input information of the expense (ID, Date, Quantity, Content)
+o ID auto increase, ID = ID Max + 1 in the next time.
+* Option 2: Display all expenses
+o Display the list of the expenses and total all the inputted expense amount
+* Option 3: Delete an expense
+o Prompt users input expense ID of the expense they want to delete.
+o If ID does not exist, display on the screen: "Delete an expense fail"
+o If ID existed, delete and display on the screen :”Delete an expense successful”
+* Option 4: Exit program.
+Expectation of User interface: 
+
+
+
+
+
+Guidelines
+
+Student implement methods
+       addExpense 
+       displayAll
+       deleteExpense
+in startup code.
+Example:
+Function 1: Add the expense. 
+o Implement function: public boolean addExpense(List<Expense> list, Date date, double amount,  String content)
+* Input:
+> list: list of all expense.
+> date: date/month/year.
+> amount: amount of money.
+> content: Content.
+* Return values: Add expense status.
+Function 2: Display list of expenses.
+o Implement function: public void displayAll(List<Expense> list)
+* Input:
+> list: list of all expenses
+* Return values: void.
+Function 3: Delete an expense
+o Implement function: public boolean deleteExpense(List<Expense> list, Expense exp)
+* Input:
+> list: list all the expense.
+> Exp: The expense that users want to delete.
+* Return values: Delete the expense status.
+
