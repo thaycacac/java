@@ -1,0 +1,60 @@
+
+LAB211 AssignmentType:Short AssignmentCode:J1.S.P0072LOC:150Slot(s):2
+Title 
+  	Write a login function uses MD5 encryption for passwords (separate from FPT Webmail software Project.
+ Background 
+       NA
+Program Specifications
+Write a login function uses MD5 encryption for passwords.
+Username include the following information:
+- Username(String), Password(String), Name(String), Phone(String), Email(String), Address(String), Date Of Birth(Date)
+- Phone number must be 10 or 11 number
+- Email is in correct format.
+- Check date of birth (DOB) properly formatted date format according to dd/MM/yyyy
+Write a login function use this information, to sign program then displays greeting “Hello + Username”,
+Function details: 
+Function 1: Display a menu and ask users to select an option.
+* Users run the program. The program prompts users to select an option.
+* Users select an option, perform Function 2.
+Function 2: Perform function based on the selected option..
+* Option  1: Add account
+o Add Account information (Username, Password, Name, Phone, Email Address, Date Of Birth) .
+o Check data is valid with the following conditions:
+* Username cannot null, empty or already exist in DB.
+* Password cannot null, empty.
+* Phone number must be 10 or 11 number.
+* Email is valid format.
+* Date of birth is valid format dd/MM/yyyy.
+o Password use the MD5 encryption function.
+o Add account in to program.
+o Return the menu.
+* Option  2: Login
+o Prompt users to input a username and password.
+o Access to DB search account.						
+o If information correct, display the greeting.
+o If information is incorrect reported login fail.
+o Return to the main screen.
+* Option 3: Exit the program.
+Expectation of User interface:
+
+
+Guidelines
+
+       Student must implement methods
+- addAccount 
+- login
+        in startup code.
+
+Function  1: addAccount
+o implement function:public int addAccount(String username, String password, String name, String phone, String email, String address, String dob) throws Exception
+* Input:
+> account: account information.
+* Return value: 
+* id account.
+* List Exception
+Function 2: Login
+o implement function: public Boolean login(String username, String password)
+* Input:
+> account: account information.
+* Return value: login status.
+
