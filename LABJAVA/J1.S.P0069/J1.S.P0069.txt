@@ -1,0 +1,52 @@
+
+LAB211 AssignmentType:Short AssignmentCode:J1.S.P0069LOC:33Slot(s):1
+Title
+  	Input, sort and display student information. 
+Background 
+       N/A
+Program Specifications
+Write a program to read and write file as below:
+- Enter file name.
+- Enter file content.
+- Write content to file.
+- Read content from file and display on screen.
+
+Function details: 
+Function 1: Display GUI and Input Data.
+* User run program. Program prompts user to input data.
+* Auto next to Function 2.
+Function 2: Perform function
+* Program write to file, read from file, display file content on screen when required. Display message and exit program.
+Expectation of User interface:
+
+
+
+Guidelines
+       Student must implement methods
+- writeFile
+- readFile 
+       in startup code.
+Hint: 
+User runs the program:
+- Write file: program display message to ask if user want to write to file or not.
+o If yes, perform file writing:
+Program requests user to enter file path, write content to file and performs Function 1 and switch to file reading.
+o If not, switch to file reading.
+- Read file: program continues to ask if user want to read from file or not.
+o If yes, perform file reading:
+Program requests user to enter file path and perform Function 2 and exit the program.
+o If not, exit program.
+- To implement Function 1, use the following classes in IO package: FileWriter, File, BufferedWriter
+- To implement Function 2, use the following classes in IO package: FileReader, File
+Function 1: Write content to file
+o Method name: public boolean writeFile(String path, String content)
+* Input:
+> path: path of the file.
+* Return: status of file writing operation.
+Function 2: Read file content.
+o Method name: public String readFile(String path)
+* Input:
+> path: path of the file.
+* Return: content of file.
+
+       
