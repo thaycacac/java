@@ -1,0 +1,58 @@
+
+LAB211 AssignmentType:Short AssignmentCode:J1.S.P0067LOC:39Slot(s):1
+Title
+  	Analyze the user input string. 
+Background 
+       N/A
+Program Specifications
+
+Write a program to analyze the input string and display the following information:
+- Display the number of characters in the string.
+- Display the all characters, uppercase characters, lowercase characters.
+- Display the list of number, list of even numbers, list of odd numbers, and list of square numbers.
+- Display the special characters
+
+Function details: 
+
+Function 1: Display Gui And Input Data.
+* User runs program. The program prompts user to input data.
+* Auto next Function 2.
+Function 2: Perform function
+* Analyze and display result
+* Display the number of characters in the string.
+* Display the all characters, uppercase characters, lowercase characters.
+* Display list of numbers, list of even numbers, list of odd number, and list of square numbers
+* Display the special characters
+
+* Exit the program.
+Expectation of User interface:
+
+
+
+Guidelines
+       Student must implement methods
+- getNumber 
+- getCharacter 
+       in startup code.
+Hint:
+- Create AnalysisString class which includes the two methods as described in Functional Requirements section.
+o Method getNumber to retrieve the following results
+* List all numbers (using Regular Expressions)
+* List even numbers (number % 2 == 0)
+* List odd numbers (number % 2 != 0)
+* List square numbers (using Math.sqrt)
+o Method getCharacter to retrieve the following results
+* String of all characters
+* String of special characters (using Regular Expressions)
+* String of uppercase characters (using Character.isUpperCase())
+* String of lowercase characters (opposite)
+Function 1: Analyze the number types
+o Method name: public HashMap<String, List<Interger>> getNumber(String input)
+* Input:
+> input: the input string.
+* Return: analysis result.
+Function 2: Analyze the character types and special characters
+o Method name: public HashMap<String, StringBuilder> getCharacter(String input)
+* Input:
+> input:  the input string.
+* Return: analysis result.
