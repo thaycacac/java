@@ -1,0 +1,68 @@
+﻿
+LAB211 Assignment
+Type:
+Short Assignment
+
+Code:
+J1.S.P0064.docx
+
+LOC:
+30
+
+Slot(s):
+1
+
+Title
+  	Check data format. 
+Background 
+N/A
+Program Specifications
+Create a program that allows inputting phone number, email, Date and checking their format
+Input phone number must be numbers.
+Input phone number must contain 10 numbers.
+Input email must follow standard email format.
+Input date must follow the dd/MM/yyyy format.
+Function details: 
+Function 1: Display GUI and Input Data.
+Users run the program. The program prompts users to input Data.
+Auto next Function 2.
+Function 2: Perform function
+The program checks the format of the input phone number, email and date.
+Display the messages on the screen and Exit the program. 
+
+Expectation of User interface:
+
+
+
+Guidelines
+Student must implement the methods
+checkPhone 
+checkDate 
+checkEmail
+in startup code.
+Suggestion:
+Use regex to check the format of Phone and Email. 
+Use SimpleDateFormat to check the format of Date.
+Function1:  Check the Phone format
+The program requires inputting Phone. It returns the message if the input value is wrong or returns String empty if the input value is corrected.
+Function name: public String checkPhone(String phone)
+Input:
+phone: Phone number.
+Return: error message.
+If phone is not a number, the program displays the message “Phone number must be number” and requires input again. 
+If the length of phone is not 10 digits, the program displays the message “Phone number must be 10 digits” and allows input again.
+Function2:  Check the date format
+The program allows to input Date. It returns the message if the input value is wrong and returns String empty if input value is correct.
+Function name: public String checkDate(String date)
+Input:
+date: date
+Return value: error message
+If input date format is incorrect, the program displays the message “Date to correct format(dd/MM/yyyy)” and allows input again. 
+Function3: Check email format
+The program allows to input email. It returns the error message if input value is wrong, returns String empty if input value is correct.
+Function name: public String checkEmail(String email)
+Input:
+email: Email
+Return: error message.
+If the input email format is incorrect, the program displays the message “Email must be correct format” and allows to input again.
+
