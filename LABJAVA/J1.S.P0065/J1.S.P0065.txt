@@ -1,0 +1,76 @@
+﻿
+LAB211 Assignment
+Type:
+Short Assignment
+
+Code:
+J1.S.P0065.docx
+
+LOC:
+70
+
+Slot(s):
+1
+
+Title
+  	Check data format. 
+Background 
+N/A
+Program Specifications
+Create a program allows input:
+Student information includes: Student name, class name, the marks Math, Physical and Chemistry in the range from 1 to 10.
+ Display on screen the information:
+Student Type following the conditions: 
+A: mark > 7.5.
+B: 6 <= mark <= 7.5.
+C: 4 <= mark < 6 .
+D: mark < 4.
+Student Type statistics by %.
+Function details: 
+Function 1: Display GUI And Input Data.
+Users run the program. The program prompts users to input Student data.
+When users stop inputting Student data, next Function 2.
+Function 2: Perform function
+The program classifies students and gives student rank statistics by %.
+Display notify result of students together with statistic result and exit the program.
+
+Expectation of User interface:
+
+
+
+Guidelines
+Student must implement the methods
+createStudent 
+averageStudent
+getPercentTypeStudent 
+in startup code.
+Suggestion:
+Create a class Student contains the following properties: 
+Student Name, Class, Math, Physical, Chemistry, Average, Type.
+Create a class Mark Calculation, classify students, calculate Student Type statistics, and set the results on Student object. 
+Give the statistics:
+A:? %
+B:? %
+C:? %
+D:? %
+Function1: Input student information
+Must create function: Student createStudent(String name, String classes, double maths, double chemistry, double physics) 
+Input:
+name:  Student name
+classes: Class.
+maths: Math mark.
+chemistry: Chemistry mark.
+physics: Physical mark.
+Return: 
+Student object.
+Function 2: Student classification.
+Write Function: List<Student> averageStudent(List<Student> students)
+Input:
+students:  the list of students not classified yet.
+Return: the list of students already classified.
+Function3: Student Type Statistics.
+Must create function: HashMap<String, Double> getPercentTypeStudent(List<Student> students)
+Input:
+students: the list of students already classified.
+Return: Student Type statistics by % by the key A,B,C, D.
+
