@@ -1,0 +1,53 @@
+
+LAB211 AssignmentType:Short AssignmentCode:J1.S.P0062LOC:26Slot(s):1
+Title
+  	Create a program to analyze file path. 
+Background 
+       N/A
+Program Specifications
+Create a program take input data is a path to a file and return following information
+- Disk driver
+- File name
+- File extension
+- Folders name
+- Path to file folder
+Print info to screen
+
+Function details: 
+Function 1: Display GUI And Input Data.
+* Users run the program. The program prompts users input Data.
+* Auto next Function 2.
+Function 2: Perform function
+* Program display information: disk driver, path to folder, file extension, file name
+* Show info to screen and exit program 
+Expectation of User interface:
+
+
+
+Guidelines
+       Student must implement methods
+- getPath 
+- getFileName
+- getExtension
+- getDisk
+- getFolders
+       in startup code.
+
+Example:
+- Using functions LastIndexOf, IndexOf, SubString, Split of String.
+Function1: Get the path to file folder without file name
+o Create a function: public String getPath()
+* Return value: path to file folder without file name
+Function 2: Get filename without file extension.
+o Create a function: public String getFileName()
+* Return value: filename without file extension.
+Function 3: Get file extension.
+o Create a function: public String getExtension()
+* Return value: file extension.
+Function 4: Get disk driver.
+o Create a function: public String getDisk()
+* Return value: Disk driver name.
+Function 5: Get folders name.
+o Creae a function: public String[] getFolders()
+* Return value: Folders name.
+       
