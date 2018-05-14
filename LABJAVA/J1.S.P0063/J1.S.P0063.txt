@@ -1,0 +1,82 @@
+﻿
+LAB211 Assignment
+Type:
+Short Assignment
+
+Code:
+J1.S.P0063.docx
+
+LOC:
+25
+
+Slot(s):
+1
+
+Title
+  	Input and display Person Info. 
+Background 
+N/A
+Program Specifications
+Write a program allow user to input and sort person information (name, address, salary)
+Validate salary is a number or not
+Sort Person list ascending
+Show 3 person information by ascending of salary
+Function details: 
+Function 1: Display Gui And Input Data.
+Users run the program. The program prompts users input Data.
+Auto next Function 2.
+Function 2: Perform function
+Program display input information
+Sort person list by salary ascending and exit program
+Expectation of User interface:
+
+
+
+Guidelines
+Student must implement methods
+inputPersonInfo 
+displayPersonInfo
+ sortBySalary
+in startup code.
+Example:
+Create a class named Person with properties:
+private String name;
+private String address;
+private double salary;
++ Create constructors: name, address, salary
++ Create get/set functions for Person properties
++ Create function Person inputPersonInfo (String name, String address, String sSalary): 
+ Validate salary is a number or not.
+ If salary is not a number, prompt use to re-input and show error message that salary must be a number.
+ If salary is a negative number prompt use to re-input and show error message that salary must be a positive number.
++ Create a function displayPersonInfo(Person person)
+ Display person properties
++ Create Person[] sortBySalary(Person[] person):
+	Sort person by BubbleSort algorithm
++ Create an array of 3 person.
+Function 1: Input Person information
+Program prompt user to input name, address, salary of Person
+Create a function: Person inputPersonInfo (String name,String address, String sSalary) throws Exception
+Input:
+ name: name of Person
+address: address of Person
+salary: salary of Person
+Return value: 
+Person object.
+Exception("Salary is greater than zero"); if input invalid
+Exception("You must input Salary."); if input invalid
+Exception("You must input digit."); if input invalid
+Function 2: Display Person information.
+Program show all Person properties just input
+Create a function: void displayPersonInfo(Person person)
+Input:
+person: Person object
+Function 3: Sort Person array by salary ascending.
+Program display all Person properties sort by Person’s salary
+Create function: Person[] sortBySalary(Person[] person) throws Exception
+Input:
+person: Person array need to be sorted.
+Return value: 
+Person array sorted by salary.
+Exception("Can't Sort Person"); If there a errors
+
