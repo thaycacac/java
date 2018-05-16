@@ -1,0 +1,54 @@
+﻿
+LAB211 Assignment
+Type:
+Short Assignment
+
+Code:
+J1.S.P0060.docx
+
+LOC:
+21
+
+Slot(s):
+1
+
+Title
+  	Calculate the total amount spent by a user through the bills. 
+Background 
+N/A
+Program Specifications
+The input values of the program are a user’s bills and the amount in his wallet.
+Calculate the amount the user has already spent. 
+Compare the amount will be used to pay the bills with the amount in the user’s wallet to check whether the transaction could be executed. 
+The program is generally designed as following: 
+Designing class Person represented the user.
+Designing class Wallet represented the user's wallet within class Person.
+Function details: 
+Function 1: Display GUI and Input Data.
+Users run the program. The program prompts users input Data.
+Auto next Function 2.
+Function 2: Perform function
+The program calculates the total amount of the bills and compare it with the amount in the user’s wallet to check whether it is enough to pay.
+Show the message and Exit the program.
+Expectation of User interface:
+
+
+
+Guidelines
+Student must implement the methods
+calcTotal
+payMoney
+in startup code.
+Example: 
+Class Wallet contains the information about the amount in the user’s wallet and a function to compare it with the total bill amount.
+Function 1: Calculate the total amount of the bills
+Must create the function: public int calcTotal (int [] bills)
+Input:
+bills: the bills.
+Return: The total amount of the bills.
+Function 2: Check whether the amount in the wallet is enough to pay. 
+Must create the function: public boolean payMoney (int total)
+Input: 
+total: the total amount of the bills. 
+Return: payment status. 
+
