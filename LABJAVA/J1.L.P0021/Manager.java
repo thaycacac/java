@@ -148,7 +148,8 @@ public class Manager {
     }
 
     //Get list student find by id
-    public static ArrayList<Student> getListStudentById(ArrayList<Student> ls, String id) {
+    public static ArrayList<Student> getListStudentById(ArrayList<Student> ls, 
+            String id) {
         ArrayList<Student> getListStudentById = new ArrayList<>();
         for (Student student : ls) {
             if (id.equalsIgnoreCase(student.getId())) {
@@ -167,8 +168,8 @@ public class Manager {
         ArrayList<Report> lr = new ArrayList<>();
         int size = ls.size();
         for (int i = 0; i < size; i++) {
-            int total = 0;
             for (Student student1 : ls) {
+                int total = 0;
                 for (Student student2 : ls) {
                     if (student1.getId().equalsIgnoreCase(student2.getId())
                             && student1.getCourseName().equalsIgnoreCase(student2.getCourseName())) {
