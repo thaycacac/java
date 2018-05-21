@@ -19,9 +19,9 @@ public class Manager {
     }
 
     //Allow user create new student
-    public static void createStudent(int count, ArrayList<Student> ls) {
+    public static void createStudent(ArrayList<Student> ls) {
         //if number of students greater than 10 ask user continue or not
-        if (count > 10) {
+        if (ls.size() > 10) {
             System.out.print("Do you want to continue (Y/N): ");
             if (!Validation.checkInputYN()) {
                 return;
@@ -44,7 +44,6 @@ public class Manager {
             //check student exist or not
             if (Validation.checkStudentExist(ls, id, name, semester, course)) {
                 ls.add(new Student(id, name, semester, course));
-                count++;
                 System.out.println("Add student success.");
                 return;
             }
@@ -88,7 +87,7 @@ public class Manager {
     }
 
     //Allow user update and delete   
-    public static void updateOrDelete(int count, ArrayList<Student> ls) {
+    public static void updateOrDelete(ArrayList<Student> ls) {
         //if list empty 
         if (ls.isEmpty()) {
             System.err.println("List empty.");
@@ -122,7 +121,6 @@ public class Manager {
                 return;
             } else {
                 ls.remove(student);
-                count--;
                 System.err.println("Delete success.");
                 return;
             }

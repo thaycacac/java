@@ -13,7 +13,6 @@ public class Main {
         ls.add(new Student("1", "Pham Ngoc Hoa", "Spring", "java"));
         ls.add(new Student("2", "Do Quang Hiep", "Summer", ".net"));
         ls.add(new Student("3", "Nguyen Xuan Cuong", "Spring", "c/c++"));
-        int count = 3;
         //loop until user want to exit program
         while (true) {
             //Show menu option
@@ -21,13 +20,13 @@ public class Main {
             int choice = validation.checkInputIntLimit(1, 5);
             switch (choice) {
                 case 1:
-                    Manager.createStudent(count, ls);
+                    Manager.createStudent(ls);
                     break;
                 case 2:
                     Manager.findAndSort(ls);
                     break;
                 case 3:
-                    Manager.updateOrDelete(count, ls);
+                    Manager.updateOrDelete(ls);
                     break;
                 case 4:
                     Manager.report(ls);
@@ -35,7 +34,6 @@ public class Main {
                 case 5:
                     return;
             }
-
         }
     }
 
