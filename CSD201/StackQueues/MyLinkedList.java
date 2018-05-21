@@ -1,4 +1,4 @@
-package mycustomlinkedlist;
+
 
 /**
  *
@@ -80,6 +80,14 @@ public class MyLinkedList<T> {
             MyNode temp3 = temp2.getNext();
             temp.setNext(temp3);
         }
+    }
+
+    public T getTail() {
+        MyNode temp = head;
+        for (int i = 0; i < size() - 1; i++) {
+            temp = temp.getNext();
+        }
+        return (T) temp.getData();
     }
 
     public int size() {
