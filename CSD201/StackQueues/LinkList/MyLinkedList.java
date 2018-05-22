@@ -1,4 +1,4 @@
-
+package LinkList;
 
 /**
  *
@@ -7,10 +7,8 @@
 public class MyLinkedList<T> {
 
     MyNode<T> head, tail;
-    IVisitable visitor;
 
-    public MyLinkedList(IVisitable visitor) {
-        this.visitor = visitor;
+    public MyLinkedList() {
     }
 
     public boolean isEmpty() {
@@ -89,6 +87,10 @@ public class MyLinkedList<T> {
         }
         return (T) temp.getData();
     }
+    
+    public T getHead() {
+        return (T) head.getData();
+    }
 
     public int size() {
         MyNode temp = head;
@@ -100,12 +102,14 @@ public class MyLinkedList<T> {
         return count;
     }
 
+    public void clear() {
+        head = tail = null;
+    }
+
     public void traverse() {
         MyNode<T> temp = head;
         while (temp != null) {
-            if (visitor != null) {
-                visitor.visit(temp.getData());
-            }
+            System.out.println(temp.getData());
             temp = temp.getNext();
         }
     }
