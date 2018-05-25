@@ -1,4 +1,7 @@
+package Manager;
 
+import Entity.Report;
+import Entity.Student;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -19,9 +22,9 @@ public class Manager {
     }
 
     //Allow user create new student
-    public static void createStudent(ArrayList<Student> ls) {
+    public static void createStudent(int count, ArrayList<Student> ls) {
         //if number of students greater than 10 ask user continue or not
-        if (ls.size() > 10) {
+        if (count > 10) {
             System.out.print("Do you want to continue (Y/N): ");
             if (!Validation.checkInputYN()) {
                 return;
@@ -44,6 +47,7 @@ public class Manager {
             //check student exist or not
             if (Validation.checkStudentExist(ls, id, name, semester, course)) {
                 ls.add(new Student(id, name, semester, course));
+                count++;
                 System.out.println("Add student success.");
                 return;
             }
@@ -87,7 +91,7 @@ public class Manager {
     }
 
     //Allow user update and delete   
-    public static void updateOrDelete(ArrayList<Student> ls) {
+    public static void updateOrDelete(int count, ArrayList<Student> ls) {
         //if list empty 
         if (ls.isEmpty()) {
             System.err.println("List empty.");
@@ -105,14 +109,21 @@ public class Manager {
             System.out.print("Do you want to update (U) or delete (D) student: ");
             //check user want to update or delete
             if (Validation.checkInputUD()) {
+                System.out.print("Enter id: ");
+                String idStudent = Validation.checkInputString();
                 System.out.print("Enter name student: ");
                 String name = Validation.checkInputString();
                 System.out.print("Enter semester: ");
                 String semester = Validation.checkInputString();
                 System.out.print("Enter name course: ");
                 String course = Validation.checkInputCourse();
+                //check user change or not
+                if (!Validation.checkChangeInfomation(student, id, name, semester, course)) {
+                    System.err.println("Nothing change.");
+                }
                 //check student exist or not
                 if (Validation.checkStudentExist(ls, id, name, semester, course)) {
+                    student.setId(idStudent);
                     student.setStudentName(name);
                     student.setSemester(semester);
                     student.setCourseName(course);
@@ -121,6 +132,7 @@ public class Manager {
                 return;
             } else {
                 ls.remove(student);
+                count--;
                 System.err.println("Delete success.");
                 return;
             }
@@ -146,8 +158,7 @@ public class Manager {
     }
 
     //Get list student find by id
-    public static ArrayList<Student> getListStudentById(ArrayList<Student> ls, 
-            String id) {
+    public static ArrayList<Student> getListStudentById(ArrayList<Student> ls, String id) {
         ArrayList<Student> getListStudentById = new ArrayList<>();
         for (Student student : ls) {
             if (id.equalsIgnoreCase(student.getId())) {
@@ -166,18 +177,20 @@ public class Manager {
         ArrayList<Report> lr = new ArrayList<>();
         int size = ls.size();
         for (int i = 0; i < size; i++) {
-            for (Student student1 : ls) {
-                int total = 0;
-                for (Student student2 : ls) {
-                    if (student1.getId().equalsIgnoreCase(student2.getId())
-                            && student1.getCourseName().equalsIgnoreCase(student2.getCourseName())) {
+            int total = 0;
+            for (Student student : ls) {
+                String id = student.getId();
+                String courseName = student.getCourseName();
+                String studentName = student.getStudentName();
+                for (Student studentCountTotal : ls) {
+                    if (id.equalsIgnoreCase(studentCountTotal.getId())
+                            && courseName.equalsIgnoreCase(studentCountTotal.getCourseName())) {
                         total++;
                     }
                 }
-                if (Validation.checkReportExist(lr, student1.getStudentName(),
-                        student1.getCourseName(), total)) {
-                    lr.add(new Report(student1.getStudentName(),
-                            student1.getCourseName(), total));
+                if (Validation.checkReportExist(lr, studentName,
+                        courseName, total)) {
+                    lr.add(new Report(student.getStudentName(), studentName, total));
                 }
             }
         }

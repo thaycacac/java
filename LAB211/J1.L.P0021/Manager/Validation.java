@@ -1,4 +1,7 @@
+package Manager;
 
+import Entity.Student;
+import Entity.Report;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -132,4 +135,17 @@ public class Validation {
         }
         return true;
     }
+
+    //check user change or not
+    public static boolean checkChangeInfomation(Student student, String id,
+            String name, String semester, String course) {
+        if (id.equalsIgnoreCase(student.getId())
+                && name.equalsIgnoreCase(student.getStudentName())
+                && semester.equalsIgnoreCase(student.getSemester())
+                && course.equalsIgnoreCase(student.getCourseName())) {
+            return false;
+        }
+        return true;
+    }
+
 }
