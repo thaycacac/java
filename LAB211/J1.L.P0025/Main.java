@@ -1,9 +1,11 @@
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.nio.channels.FileChannel;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -11,44 +13,61 @@ import java.io.IOException;
  */
 public class Main {
 
-    public static void main(String[] args) {
-//        String pathFile = Manager.checkInputFileName();
-        String pathFile = "D:/test.txt";
-        StringBuffer content = new StringBuffer();
+    public static void changeOneLine(String pathFile) {
         try {
             File file = new File(pathFile);
             //check user input is file or not
-            if (file.isFile()) {
-                FileReader fileReader = new FileReader(file);
-                BufferedReader bufferedReader = new BufferedReader(fileReader);
-                String line = bufferedReader.readLine();
-                //loop until last paragraph
-                while (line != null) {
-                    //there are no blank line between lines
-                    if (line.equals("")) {
-                        line = bufferedReader.readLine();
-                        continue;
-                    }
-                    line = Manager.formatOneSpace(line);
-                    line = Manager.formatSpecialCharacters(line);
-                    line = Manager.firstAfterDotUpperCase(line);
-                    line = Manager.noSpaceQuotes(line);
-                    line = Manager.noSpaceApostrophe(line);
-                    content.append(line);
-                    content.append("\n");
-                    line = bufferedReader.readLine();
-                }
-                fileReader.close();
-                bufferedReader.close();
 
-                Manager.writeFiler(pathFile, Manager.formatConten(content));
-            } else {
-                System.err.println("Not is file.");
+            RandomAccessFile raf = new RandomAccessFile(file, "rw");
+            FileChannel fileChanel = raf.getChannel();
+            raf.seek(raf.getFilePointer());
+            String line = raf.readLine();
+            //loop until last paragraph
+            int len = (int) (raf.length() - raf.getFilePointer());
+            byte[] bytearray = new byte[len];
+            raf.readFully(bytearray, 0, len);
+            fileChanel.truncate(0);
+            raf.write(bytearray, 0, len);
+            //there are no blank line between lines
+            line = Manager.formatOneSpace(line);
+            line = Manager.formatSpecialCharacters(line);
+            line = Manager.firstAfterDotUpperCase(line);
+            line = Manager.noSpaceQuotes(line);
+            line = Manager.noSpaceApostrophe(line);
+            
+            raf.seek(file.length());
+            raf.writeBytes(System.getProperty("line.separator")
+                    + line);
+            raf.close();
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) {
+//        changeOneLine("d:/test.txt");
+
+        try {
+            File file = new File("d:/test.txt");
+            RandomAccessFile raf;
+            raf = new RandomAccessFile(file, "r");
+            int countLine = 0;
+            String line = raf.readLine();
+            while (line != null) {
+                countLine++;
+                line = raf.readLine();
+            }
+            for (int i = 0; i < countLine; i++) {
+                changeOneLine("d:/test.txt");
             }
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+
+//        String pathFile = Manager.checkInputFileName();
     }
 }
