@@ -1,2 +1,0 @@
-house=Ngôi nhà
-car=Xe ô tô
