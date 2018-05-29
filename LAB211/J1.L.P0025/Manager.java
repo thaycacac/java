@@ -1,7 +1,9 @@
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.nio.channels.FileChannel;
 import java.util.Scanner;
 
 /**
@@ -32,7 +34,6 @@ public class Manager {
     public static String formatOneSpaceSpecial(String line, String character) {
         StringBuffer stringBuffer = new StringBuffer();
         String[] strings = line.split("\\s*\\" + character + "\\s*");
-        int conditionBreak = strings.length;
         if (strings.length == 1) {
             return line;
         } else {
@@ -48,25 +49,14 @@ public class Manager {
             return stringBuffer.toString().trim();
         }
     }
-    //only one space between words and all character lowercase
 
+    //only one space between words and all character lowercase
     public static String formatOneSpace(String line) {
-        StringBuffer stringBuffer = new StringBuffer();
         line = line.toLowerCase();
-        String[] strings = line.split("\\s+");
-        //only one space between words
-        for (int i = 0; i < strings.length; i++) {
-            stringBuffer.append(strings[i]);
-            stringBuffer.append(" ");
-        }
-        line = stringBuffer.toString().trim();
+        line = line.replaceAll("\\s+", " ");
         line = formatOneSpaceSpecial(line, ".");
         line = formatOneSpaceSpecial(line, ",");
         line = formatOneSpaceSpecial(line, ":");
-        line = formatOneSpaceSpecial(line, ";");
-        line = formatOneSpaceSpecial(line, "'");
-        line = formatOneSpaceSpecial(line, "?");
-        line = formatOneSpaceSpecial(line, "!");
         line = formatOneSpaceSpecial(line, "\"");
         return line;
     }
@@ -79,10 +69,7 @@ public class Manager {
             if (stringBuffer.charAt(i) == ' '
                     && stringBuffer.charAt(i + 1) == '.'
                     || stringBuffer.charAt(i + 1) == ','
-                    || stringBuffer.charAt(i + 1) == ':'
-                    || stringBuffer.charAt(i + 1) == ';'
-                    || stringBuffer.charAt(i + 1) == '?'
-                    || stringBuffer.charAt(i + 1) == '!') {
+                    || stringBuffer.charAt(i + 1) == ':') {
                 stringBuffer.deleteCharAt(i);
                 i--;
             }
@@ -104,76 +91,121 @@ public class Manager {
     }
 
     //there are no spaces before and after sentence or word phrases in quotes (“”).
+    static int countQuetes = 0;
+
     public static String noSpaceQuotes(String line) {
-        StringBuffer stringBuffer = new StringBuffer();
-        String[] strings = line.split(" \" ");
-        for (int i = 0; i < strings.length; i++) {
-            if (strings.length - 1 == i) {
-                stringBuffer.append(strings[i]);
-            } else if (i % 2 == 0) {
-                stringBuffer.append(strings[i]);
-                stringBuffer.append(" \"");
-            } else {
-                stringBuffer.append(strings[i]);
-                if (i == strings.length) {
-
-                }
-                stringBuffer.append("\" ");
+        StringBuffer stringBuffer = new StringBuffer(line);
+        for (int i = 0; i < stringBuffer.length(); i++) {
+            if (stringBuffer.charAt(i) == '"' && countQuetes % 2 == 0) {
+                stringBuffer.deleteCharAt(i + 1);
+                countQuetes++;
+            } else if (stringBuffer.charAt(i) == '"' && countQuetes % 2 == 1
+                    && i != 0) {
+                stringBuffer.deleteCharAt(i - 1);
+                countQuetes++;
             }
         }
         return stringBuffer.toString().trim();
     }
 
-    //there are no spaces before and after sentence or word phrases in quotes ('').
-    public static String noSpaceApostrophe(String line) {
-        StringBuffer stringBuffer = new StringBuffer();
-        String[] strings = line.split("\\s+\'\\s+");
-        int lengthWord = strings.length;
-        for (int i = 0; i < lengthWord; i++) {
-            if (strings.length - 1 == i) {
-                stringBuffer.append(strings[i]);
-            } else if (i % 2 == 0) {
-                stringBuffer.append(strings[i]);
-                stringBuffer.append(" \'");
-            } else {
-                stringBuffer.append(strings[i]);
-                stringBuffer.append("\' ");
-            }
-        }
-        return stringBuffer.toString().trim();
-    }
-
-    //must have dot at the end of text and first character of word in first line is in Uppercase.
-    public static String formatConten(StringBuffer content) {
-        int index = 0;
-        //upercase until find letter
-        while (true) {
-            if (Character.isLetter(content.charAt(index))) {
-                content.setCharAt(index, Character.toUpperCase(content.charAt(index)));
+    //first character of word in first line is in Uppercase
+    public static String firstUpercase(String line) {
+        line = line.substring(3);
+        System.out.println(line);
+        StringBuffer stringBuffer = new StringBuffer(line);
+        for (int i = 0; i < line.length(); i++) {
+            if (Character.isLetter(line.charAt(i))) {
+                stringBuffer.setCharAt(i, Character.toUpperCase(line.charAt(i)));
                 break;
             }
-            index++;
         }
-        //add dot end content
-        if (content.charAt(content.length() - 1) != '.') {
-            content.append(".");
-        }
-        content.deleteCharAt(content.length() - 2);
-        return content.toString();
+        return stringBuffer.toString().trim();
     }
 
-    public static void writeFiler(String pathFile, String content) {
+    //must have dot at the end of text.
+    public static String lastAddDot(String line) {
+        if (line.endsWith(".")) {
+            return line;
+        } else {
+            return line + ".";
+        }
+    }
+
+    ////check line empty
+    public static boolean isLineEmpty(String line) {
+        if (line.length() == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //count number line of file
+    public static int countLine(String pathFile) {
         try {
-            FileWriter fileWriter = new FileWriter(pathFile);
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            bufferedWriter.write(content);
-            bufferedWriter.close();
-            fileWriter.close();
-            System.err.println("Successful");
+            File file = new File(pathFile);
+            //check path file is file or not
+            if (file.isFile()) {
+                RandomAccessFile raf;
+                raf = new RandomAccessFile(file, "r");
+                int countLine = 0;
+                String line = raf.readLine();
+                while (line != null) {
+                    countLine++;
+                    line = raf.readLine();
+                }
+                return countLine;
+            } else {
+                System.err.println("Not is file");
+            }
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace();
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+        return 0;
+    }
 
+    public static void changeOneLine(String pathFile, int numberLine, int countLine) {
+        try {
+            File file = new File(pathFile);
+            RandomAccessFile raf = new RandomAccessFile(file, "rw");
+            FileChannel fileChanel = raf.getChannel();
+            raf.seek(raf.getFilePointer());
+            String line = raf.readLine();
+            //loop until last paragraph
+            int len = (int) (raf.length() - raf.getFilePointer());
+            byte[] bytearray = new byte[len];
+            raf.readFully(bytearray, 0, len);
+            fileChanel.truncate(0);
+            raf.write(bytearray, 0, len);
+            //check line empty
+            if (isLineEmpty(line)) {
+                return;
+            }
+            //there are no blank line between lines
+            line = Manager.formatOneSpace(line);
+            line = Manager.formatSpecialCharacters(line);
+            line = Manager.firstAfterDotUpperCase(line);
+            line = Manager.noSpaceQuotes(line);
+            //if first line first character of word in first line is in Uppercase
+            if (numberLine == 0) {
+                line = firstUpercase(line);
+            }
+            //must have dot at the end of text.
+            if (numberLine == countLine - 1) {
+                line = lastAddDot(line);
+            }
+
+            raf.seek(file.length());
+            raf.writeBytes(System.getProperty("line.separator")
+                    + line);
+            raf.close();
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 
 }
