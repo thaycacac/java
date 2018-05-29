@@ -1,7 +1,6 @@
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import sun.java2d.pipe.ValidatePipe;
 
 /**
  *
@@ -42,20 +41,19 @@ public class Manager {
             String phone = Validation.checkInputPhone();
             System.out.print("Enter email: ");
             String email = Validation.checkInputEmail();
+            Candidate candidate = new Candidate(id, firstName, lastName,
+                    birthDate, address, phone, email, type);
             //check id exist or not
             if (Validation.checkIdExist(candidates, id)) {
                 switch (type) {
                     case 0:
-                        createExperience(candidates, id, firstName, lastName,
-                                birthDate, address, phone, email, type);
+                        createExperience(candidates, candidate);
                         break;
                     case 1:
-                        createFresher(candidates, id, firstName, lastName,
-                                birthDate, address, phone, email, type);
+                        createFresher(candidates, candidate);
                         break;
                     case 2:
-                        createInternship(candidates, id, firstName, lastName,
-                                birthDate, address, phone, email, type);
+                        createInternship(candidates, candidate);
                         break;
                 }
             } else {
@@ -71,44 +69,47 @@ public class Manager {
 
     //allow user create experience
     public static void createExperience(ArrayList<Candidate> candidates,
-            String id, String firstName, String lastName, int birthDate,
-            String address, String phone, String email, int typeCandidate) {
+            Candidate candidate) {
         System.out.print("Enter year of experience: ");
-        int yearExperience = Validation.checkInputIntLimit(1, 100);
+        int yearExperience = Validation.checkInputExprience(candidate.getBirthDate());
         System.out.print("Enter professional skill: ");
         String professionalSkill = Validation.checkInputString();
-        candidates.add(new Experience(yearExperience, professionalSkill, id,
-                firstName, lastName, birthDate, address, phone, email,
-                typeCandidate));
+        candidates.add(new Experience(yearExperience, professionalSkill,
+                candidate.getId(), candidate.getFirstName(), candidate.getLastName(),
+                candidate.getBirthDate(), candidate.getAddress(),
+                candidate.getPhone(), candidate.getEmail(), candidate.getTypeCandidate()));
         System.err.println("Create success.");
     }
 
     //allow user create fresher
     public static void createFresher(ArrayList<Candidate> candidates,
-            String id, String firstName, String lastName, int birthDate,
-            String address, String phone, String email, int typeCandidate) {
+            Candidate candidate) {
         System.out.print("Enter graduation date: ");
         String graduationDate = Validation.checkInputString();
         System.out.print("Enter graduation rank: ");
         String graduationRank = Validation.checkInputGraduationRank();
-        candidates.add(new Fresher(graduationDate, graduationRank, id,
-                firstName, lastName, birthDate, address, phone, email,
-                typeCandidate));
+        candidates.add(new Fresher(graduationDate, graduationRank, candidate.getId(),
+                candidate.getFirstName(), candidate.getLastName(),
+                candidate.getBirthDate(), candidate.getAddress(),
+                candidate.getPhone(), candidate.getEmail(),
+                candidate.getTypeCandidate()));
         System.err.println("Create success.");
     }
 
     //allow user create internship
     public static void createInternship(ArrayList<Candidate> candidates,
-            String id, String firstName, String lastName, int birthDate,
-            String address, String phone, String email, int typeCandidate) {
+            Candidate candidate) {
         System.out.print("Enter major: ");
         String major = Validation.checkInputString();
         System.out.print("Enter semester: ");
         String semester = Validation.checkInputString();
         System.out.print("Enter university: ");
         String university = Validation.checkInputString();
-        candidates.add(new Internship(major, semester, university, id, firstName,
-                lastName, birthDate, address, phone, email, typeCandidate));
+        candidates.add(new Internship(major, semester, university, candidate.getId(),
+                candidate.getFirstName(), candidate.getLastName(),
+                candidate.getBirthDate(), candidate.getAddress(),
+                candidate.getPhone(), candidate.getEmail(),
+                candidate.getTypeCandidate()));
         System.err.println("Create success.");
     }
 
@@ -119,11 +120,10 @@ public class Manager {
         String nameSearch = Validation.checkInputString();
         System.out.print("Enter type of candidate: ");
         int typeCandidate = Validation.checkInputIntLimit(0, 2);
-        for(Candidate candidate:candidates){
-            if((candidate.getFirstName().contains(nameSearch)
-                    ||candidate.getLastName().contains(nameSearch))
-                    &&candidate.getTypeCandidate()==typeCandidate){
-                
+        for (Candidate candidate : candidates) {
+            if (candidate.getTypeCandidate() == typeCandidate
+                    && candidate.getFirstName().contains(nameSearch)
+                    || candidate.getLastName().contains(nameSearch)) {
                 System.out.println(candidate.toString());
             }
         }

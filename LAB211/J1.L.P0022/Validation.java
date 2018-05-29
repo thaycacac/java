@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Scanner;
 
 /**
@@ -127,5 +128,20 @@ public class Validation {
             }
         }
         return true;
+    }
+
+    //check experience must be smaller then age
+    public static int checkInputExprience(int birthDate) {
+        int yearCurrent = Calendar.getInstance().get(Calendar.YEAR);
+        int age = yearCurrent - birthDate;
+        while (true) {
+            int yearExperience = checkInputIntLimit(1, 100);
+            if (yearExperience > age) {
+                System.err.println("Experience must be smaller than age");
+            } else {
+                return yearExperience;
+            }
+        }
+
     }
 }
