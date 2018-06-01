@@ -1,0 +1,70 @@
+
+LAB211 AssignmentType:Short AssignmentCode:J1.S.P0059LOC:73Slot(s):1
+Title
+  	The program handles files. 
+Background 
+       N/A
+Program Specifications
+Student is required to write a program allowing users to:
+1) Read the text file on the computer disk, that contains a simple list of people with name, address, and his/her salary separated by character “;” (semi-colon). Each line contains the information of one person;
+Ask the user to enter the path to a text file, and the minimum salary. The program should read the list of people in the file and display to persons, who have a salary greater or equal the inputted number. If the salary of some person is in wrong format (not a number, not inputted) to set it to default value zero.
+Display list of found persons on the screen in the format of columns (see UI requirements)
+2) Read the text file on the computer storage and find all single words from its content, each word counted only once. Write all found words into new text file.
+
+Function details: 
+Function 1: Display a menu and ask users to select an option.
+* Users run the program. The program prompts users to select an option.
+* Users select an option, perform Function 2.
+Function 2: Perform function based on the selected option.
+* Option  1: Find person info
+o Request to Enter fullpath of the text file and minimum salary to search.
+o Test data is valid with the following conditions:
+* The amount not less than 0, wrong format, it defaults to 0.
+* The characters in the text file separated by ;
+o Display and classified those with larger amounts of money entered.
+o Display people with the least amount and the most
+o Back to the main screen.
+* Option  2: Copy text to new file
+o Request  to enter into txt file path
+o Write all single words into new file
+o Back to the main screen.
+* Option 3: Exit program.
+Expectation of User interface:
+
+
+
+Guidelines
+       Student must implement methods
+- getPerson
+- copyWordOneTimes
+       in startup code.
+
+Suggest:
+Use the class:
+java.io.BufferedReade,java.io.BufferedWriter,java.io.File, java.io.FileReader, java.io.FileWriter, java.io.IOException, java.util.ArrayList, java.util.List;
+ To word with file.Use the class:
+
+java.util.Collections;
+java.util.Comparator;
+ To sort the list.Function 1: Displays information of the amount entered.
+o  Must set the funtion: public List< Person > getPerson(String path, double money) throws Exception
+*  Input:
+> path:  File path.
+> money:  amount of money
+* Output:
+> List of the person.
+> Person who have the most money on the last list
+> Person who have the least money on the head of list
+> Exception("Path doesn't exist").
+> Exception("Can’t read file").
+Function 2: Copy and eliminate duplicate word in a file to   another file.
+o  Must set the function: public static boolean copyWordOneTimes (String source, String destination) throws Exception.
+* Input:
+> source: source path.
+>  destination: the destination path.
+* 
+> Output:copy status.
+> Exception("Path doesn't exist").
+> Exception("Can’t read file").
+> Exception("Can’t write file").
+       

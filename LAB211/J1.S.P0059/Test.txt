@@ -1,0 +1,4 @@
+Name;Address;Money
+Nghia;Ha Noi;1000.0
+Thanh;Ha Noi;1200.0
+Phuong;Ha Noi;1300.0
