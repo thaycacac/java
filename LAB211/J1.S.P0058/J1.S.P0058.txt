@@ -1,0 +1,75 @@
+
+LAB211 AssignmentType:Short AssignmentCode:J1.S.P0058LOC:48Slot(s):1
+Title
+  	Write program dictionary. 
+Background 
+       N/A
+Program Specifications
+Students are required to write a program called “Simple English - Vietnamese Dictionary” with the following features:
+1) Add new word 
+2) Delete word
+3) Search word.
+4) Exit.
+
+Users will use the program to add their pairs of English - Vietnamese words to the file on disk storage; search and display the Vietnamese word for inputted English word; or remove some pair of words from existing dictionary.
+
+Function details: 
+Function 1: Display a menu and ask users to select an option.
+* Users run the program. The program prompts users to select an option.
+* Users select an option, perform Function 2.
+Function 2: Perform function based on the selected option...
+* Option  1: Add word
+o Ask user to enter a pair of English - Vietnamese words
+o Add the pair to a dictionary (file)
+o Return to the main screen.
+* Option  2: Delete word
+o Ask user to enter the English word to be removed. 
+o Find and remove the related English-Vietnamese pair of words from dictionary
+o Return to the main screen.
+* Option  3: Translate word
+o Ask user enter English word
+o Find the related pair and display the approximate Vietnamese word
+o Return to the main screen.
+* Option  4: Exit program
+Expectation of User interface:
+
+
+
+Guidelines
+       Student must implement methods
+- addWord 
+- removeWord
+- translate
+        in startup code.
+
+Suggestion:
+
+- Students use the hash map to store worth a pair Eng - Vi
+o Every turn on the program from will test has data files or not yet:
+o If there is then load data files recorded on the type HashMap into program by loadData function ().
+o If not, initialize HashMap is Empty.
+- When adding a keyword to inspect keywords in the dictionary that has not:
+o If yes, ask the users want to update the mean of keyword.
+o Otherwise put into hashmap then overwrites the data on file with the methods updateDatabase
+- Delete file a keyword:
+o If you find it to delete and overwrite the file data by methods updateDatabase.
+o If not found, the notification does not exist in the db key.
+- Search word:
+o If found, displays the value found in db
+o If not found, display empty.
+ 
+o Function 1: Add wordMust install the function: public boolean addWord (String eng, String vi)
+* Input:
+> eng: English mean.
+> vi: Vietnamese mean.
+* Return value: the status add word
+
+o  Function 2: Delete word. Must install the function public boolean removeWord(String eng)
+> Input: eng: English word
+>  Return Value: status delete word. 
+Function 3: Search word.
+o Must install the function: public String translate(String eng)
+* Input
+> eng: English word.
+* Return Value Vietnamese word
+       
