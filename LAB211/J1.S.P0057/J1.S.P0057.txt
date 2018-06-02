@@ -1,0 +1,63 @@
+
+LAB211 AssignmentType:Short AssignmentCode:J1.S.P0057LOC:56Slot(s):1
+Title
+  	User management system. 
+Background 
+       N/A
+Program Specifications
+USER MANAGEMENT SYSTEM
+The menu-based program as following:
+1. Create a new account
+2. Login System
+Implement option 1 to add a new account into file named “user.dat”. It should be ask first to enter user name and password (should be used text file or binary file). In the case “user.dat” file already exists, user account will be appended at the end of “user.dat” file. The program should be come back the menu after inserting a new account.
+Implement option 2 to find account in “user.dat” file. A message “Login successfully” should be displayed in the case the account name and password is correct. Otherwise message “Invalid user name or password” should be displayed.
+MARKING:
+- Checking existing of user.dat file before inserting a new account.
+- Input user name and password.
+- Adding a user account into user.dat file.
+- Loading user account from user.dat into Collection
+- Search user name and password into Collection
+
+Function details: 
+Function 1: Display GUI and input Data.
+* User runs the program. The program prompts users input Data.
+* Auto next Function 2.
+Function 2: Perform function
+* Option 1: Create new account
+o Require to input the task information including "username, password".
+o Check the valid data with the following conditions:
+* Username must be at least 5 characters and no spaces.
+* Username is not allowed to coincide with the existing username in the database.
+* Password must be at least 6 characters and no spaces.
+o Add account to program.
+* Option 2: Login System
+o Require to input the task information including "username, password".
+* Username must be at least 5 characters and no spaces 
+* Password must be at least 6 characters and no spaces.
+o Login successful.
+* Option 3: Exit the program
+Expectation of User interface:
+
+
+
+Guidelines
+       Student should implement methods
+- addAccount
+- find
+       in startup code.
+       
+Suggestions:
+Function 1: Add User
+o Implement the function: public void addAccount(Account acc) throws Exception
+* Input:
+> acc: user account 
+* Return value: The list exceptions
+
+Function 2: Login.
+o Implement the function: public Account find(Account acc) throws Exception
+* Input:
+> acc: account
+* Return value: 
+> User account.
+> The list exceptions.
+       
