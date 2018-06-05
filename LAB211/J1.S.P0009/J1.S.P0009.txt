@@ -1,0 +1,22 @@
+
+LAB211 AssignmentType:Short AssignmentCode:J1.S.P0009LOC:50Slot(s):1
+Title
+  	Fibonacci. 
+Background Context
+       The Fibonacci Sequence is the series of numbers: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ... The next number is found by adding up the two numbers before it. The 2 is found by adding the two numbers before it (1+1).
+       
+Program Specifications
+       Design a program that displays 45 sequence Fibonacci.
+       
+Function details: 
+1. Use recursion method to find 45 sequence Fibonacci and display to screen.
+
+Expectation of User interface:
+
+
+
+Guidelines
+The Fibonacci numbers are the integer sequence 0, 1, 1, 2, 3, 5, 8, 13, 21, ..., in which each item is formed by adding the previous two. The sequence can be defined recursively by
+
+Fibonacci number programs that implement this definition directly are often used as introductory examples of recursion. However, many other algorithms for calculating (or making use of) Fibonacci numbers also exist.
+
