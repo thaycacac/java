@@ -1,0 +1,69 @@
+
+LAB211 AssignmentType:Short AssignmentCode:J1.S.P0051LOC:61Slot(s):1
+Title
+  	Develop a computer program. 
+Background 
+       N/A
+Program Specifications
+- Write a computer program including the functionality to add, subtract, multiply, divide, and calculate exponents and BMI index.
+- The calculation function will calculate and store results into the temporary memory when input each Operator and only stop when the user inputs the operator as “=”.
+- BMI is calculated below:
+BMI = (body weight)/ (height x height).
+- Body weight: kg.
+- height x height: m.
+- Display the notification about the status of the user’s body:
+o  Under-standard: BMI is less than 19
+o  Standard: BMI is between 19-25
+o  Overweight: BMI is between 25-30
+o  Fat - should lose weight : BMI is between 30-40
+o  Very fat - should lose weight immediately: BMI is over 40
+
+Function details: 
+Function 1: Display a menu and ask users to select an option.
+o User runs the program. The program prompts user to select an option.
+o User selects an option, perform Function 2.
+Function 2: Perform function based on the selected option.
+o Option  1: Normal calculator
+a. Require to input task information including “number, operator”.
+b. Check the valid data with the following conditions:
+i. Number field must be numeric data
+ii. Operator is one of the following characters (+, -, * ,/, ^).
+c. Calculate
+d. Return to the main screen.
+o Option  2: Calculator BMI index
+a. Require to input your weight and height.
+b. Check the valid data with conditions below:
+i. Weight, height must be number.
+c. Calculate BMI and display the status.
+d. Return to the main screen.
+o Option 3: Exit the program.
+Expectation of User interface:
+
+
+
+Guidelines
+       Student must implement methods:
+- calculate 
+- calculate BMI
+       in startup code.
+
+Student must implement methods in startup code
+Use Math.pow (a, b) to compute the exponent.
+Use case switch to switch (enum).
+Use the try catch to catch NumberFormatException, NullPointerException
+Use if to catch ArithmeticException divided case 0.
+Use the “checkOperator” Operator (String operator) public function to check validation. If the operator is valid then the function returns the Enum multiplication as +, -, x, /, ^, =. Otherwise it returns null.
+Use the Double checkin (String inputVal) public function to check input is number or not? if it is not number, it returns null.
+Function 1: Normal calculator
+o Implement the function: public double calculate (double a, Operator operator, double b)
+* Input:
+> a: the first number.
+> operator: operator.
+> b: the second number.
+* Return Value: calculated results.
+Function 2: BMI Calculator
+o Must install the function: public BMI calculateBMI (double weight, double height)
+* Input :
+> weight: Weight in kg.
+> height: Height in cm.
+* Return Value: Enum contained in BMI status.
