@@ -1,0 +1,79 @@
+
+LAB211 AssignmentType:Short AssignmentCode:J1.S.P0052LOC:69Slot(s):1
+Title
+  	Write a program to manage the geographic. 
+Background 
+       N/A
+Program Specifications
+- Develop the Country class including property and method below: 
+protected String countryCode;
+   	protected String countryName;
+protected float totalArea;
+
+Implement two constructors which having parameter and without parameter.
+
+Implement fully functions set / get for properties.
+
+Implement function display () to display information of one country.
+
+
+- Develop Country class inheritance EastAsiaCountries class and add the property:
+private String countryTerrain;
+Implement constructor parameter and use the super keyword to call the constructor of the class Country above. 
+Override  display().
+- Develop “ManageEastAsiaCountries” class perform the following functions:
+1. Enter the information for 11 countries in Southeast Asia.
+2. Display already information.
+3. Search the country according to the entered country's name.
+4. Display the information increasing with the country name.
+5. Exit.
+
+Function details: 
+Function 1: Display a menu and ask users to select an option.
+o User runs the program. The program prompts users to select an option.
+o User selects an option, perform Function 2.
+Function 2: Perform function based on the selected option.
+o Option  1: Input the information of 11 countries in East Asia
+a. Require to input task information including (code, name, total area, terrain) .
+b.  Check the valid data with the following conditions:
+i. Total area must be greater than 0.
+c.  Add data into the program.
+d.  Return to the main screen.
+o Option  2: Display information of countries you’ve just input
+a. Display information of countries you’ve just input. 
+b. Return to the main screen.
+o Option  3: Search information of countries by user-entered name
+a. Require to input the country name.
+b. Display result to main screen
+c. Return to the main screen.
+o Option  4:Exit program
+Expectation of User interface:
+
+
+
+Guidelines
+       Student must implement methods
+- addCountryInformation
+- getRecentlyEnteredInformation
+- searchInformationByName.
+- sortInformationByAscendingOrder
+        in startup code.
+Suggestion:
+o Function 1: Add information for a country
+o Implement the function:: public void addCountryInformation(EastAsiaCountries country) throws Exception
+* Input:
+> country: Information of a country.
+* Return value: List of exceptions. 
+* Funtion2: Display information of countries you’ve just input
+o Implement the function: public EastAsiaCountries getRecentlyEnteredInformation() throws Exception
+* Input:
+* Return value: Result or Exception.
+Function 3: Search information of countries by user-entered name 
+o Implement the function: public EastAsiaCountries[] searchInformationByName(String name) throws Exception
+* Input:
+> name: Country name.
+* Return value: Result of the finding country.
+Function 4: Displays the names of countries by name ascending 
+o Implement the function:: public EastAsiaCountries[]sortInformationByAscendingOrder() throws Exception
+* Input:
+* Return value: the list has been sorted.
