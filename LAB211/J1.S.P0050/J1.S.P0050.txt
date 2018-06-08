@@ -1,0 +1,48 @@
+
+LAB211 AssignmentType:Short AssignmentCode:J1.S.P0050LOC:72Slot(s):1
+Title
+  	Solving the equation, find the square numbers, even numbers, and odd numbers. 
+Background 
+       N/A
+Program Specifications
+Design a program that lets users input coefficients of superlative and quadratic equations. Display the odd, even and square numbers from input coefficients.
+Function details: 
+Function 1: Display a menu and ask users to select an option.
+* Users run the program. The program prompts users to select an option.
+* Users select an option, perform Function 2.
+Function 2: Perform function based on the selected option..
+* Option  1: Calculate Superlative Equation
+o The require user to input coefficients A, B
+o Validate inputted values (A, B must be valid numbers)
+o Calculate the solution x and display it on the screen
+o Find and display even, odd and square numbers from inputted coefficients
+o Return to the main screen
+* Option  2: Calculate Quadratic Equation
+o The require user to input coefficients A, B, C
+o Validate inputted values (A, B, C must be valid numbers)
+o Calculate the solution x1, x2 and display them on the screen
+o Find and display even, odd and square numbers from inputted coefficients
+o Return to the main screen. 1
+* Option 3: Exit the program
+Expectation of User interface:
+
+
+Guidelines
+Student must implement the following methods:
+calculateEquation
+calculateQuadraticEquation
+
+in startup code.
+Recommend:
+Find the square number by using Math.sqrt to root 2, find odd as a% 2! = 0.
+Use public Float checkin (String floatString) in class Number to check if a, b, c enter numerical values Is yet.Use public boolean isOdd (float number) function to check odd number or not
+Use ham isPerfectSquare public boolean (float number) to check the number is a local number or not.
+Function 1: Solving superlative equation
+o Must write the function: public List <Float> calculateEquation (float a, float b)
+* Input:
+* a: a value 
+* b: b value 
+o Return:  list (no solution = null, infinitely many solutions = empty). Function 2: Solving quadratic. Must write the function: public List<Float> calculateQuadraticEquation(float a, float b, float c)
+* Input: a - the value of a; b: the value of b; c: the value of c.
+* Return Value: list (where no solution = null, infinitely many solutions = empty).
+
