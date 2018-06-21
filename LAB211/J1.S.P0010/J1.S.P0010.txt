@@ -1,0 +1,26 @@
+
+LAB211 AssignmentType:Short AssignmentCode:J1.S.P0010LOC:50Slot(s):1
+Title
+  	Linear search. 
+Background Context
+
+Linear search or sequential search is a method for finding a particular value in a list that consists of checking every one of its elements, one at a time and in sequence, until the desired one is found.
+Linear search is the simplest search algorithm. For a list with n items, the best case is when the value is equal to the first element of the list, in which case only one comparison is needed. The worst case is when the value is not in the list (or occurs only once at the end of the list), in which case n comparisons are needed.
+
+Program Specifications
+
+       Design a program that allows users to input the number of array. Generate random integer in number range input.  After that allows users to input search number. Display the array and index of search number in array.
+       
+Function details: 
+1. Display a screen to prompt users to input a positive decimal number.
+o Users run the program, display a screen to ask users to enter a number of array and a search number. 
+o Users input a positive decimal number. Then, perform Function 2.
+2. Display the found index in array. 
+o Generate random integer in number range for each array element.
+o Display the array
+o Display the index of search number in array.
+Expectation of User interface:
+
+
+
+Guidelines
