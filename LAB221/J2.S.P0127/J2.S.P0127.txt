@@ -1,0 +1,20 @@
+
+LAB221 AssignmentType:Short AssignmentCode:J2.S.P0127LOC:25Slot(s):1
+Title Position box color
+Background Context
+
+       KeyboardEvent objects describe a user interaction with the keyboard. Each event describes a key; the event type (keydown, keypress, or keyup) identifies what kind of activity was performed. They usually use in web, and game.
+Program Specifications
+
+       Design a program that allows users move a box color using arrow key
+       
+Function details: 
+		User using arrow key to change position of box color
+Expectation of User interface:
+
+
+	
+
+Guidelines
+
+       
