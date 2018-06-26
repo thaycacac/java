@@ -1,0 +1,24 @@
+
+LAB221 AssignmentType:Short AssignmentCode:J2.S.P0126LOC:10Slot(s):1
+Title Colors choose
+Background Context
+	A radio button or option button is a graphical control element that allows the user to choose only one of a predefined set of options.
+Radio buttons are arranged in groups of two or more and displayed on screen as, for example, a list of circular holes that can contain white space (for unselected) or a dot (for selected). Each radio button is normally accompanied by a label describing the choice that the radio button represents. The choices are mutually exclusive; when the user selects a radio button, any previously selected radio button in the same group becomes deselected (making it so only one can be selected). Selecting a radio button is done by clicking the mouse on the button, or the caption, or by using a keyboard shortcut.
+
+Program Specifications
+
+       Design a program that allows users change color using radio button.
+       
+       
+Function details: 
+
+	Program has four radios button to choose color.
+
+Expectation of User interface:
+
+
+
+
+
+Guidelines
+
