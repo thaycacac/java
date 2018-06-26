@@ -1,0 +1,19 @@
+
+LAB101 AssignmentType:Short AssignmentCode:J2.S.P0125LOC:10Slot(s):1
+Title File Menu
+Background Context
+       A menu bar is a graphical control element which contains drop down menus. The menu bar's purpose is to supply a common housing for window- or application-specific menus which provide access to such functions as opening files, interacting with an application, or displaying help documentation or manuals. Menu bars are typically present in graphical user interfaces that display documents and representations of files in windows and windowing systems but menus can be used as well in command line interface programs like text editors or filemanagers where drop-down menu is activated with shortcut key or combination. 
+Program Specifications
+       Design a program that show menu bar.
+Function details: 
+		Program has a Menu containing three menuItem
+Expectation of User interface:
+	
+
+
+Guidelines
+     Menu File is instance of JMenu class contain JmenuItem,
+     Menu New and  Open is instance of  JMenuItem. 
+     JMenubar contain menu Jmenu.
+     Set shorcut key for JMenu using  setMnemonic method, and JMenuItem using  setAccelerator method
+       
