@@ -1,0 +1,20 @@
+
+LAB221 AssignmentType:Short AssignmentCode:J2.S.P0124LOC:50Slot(s):1
+Title Simple paint program
+Background Context
+       A graphics context provides the capabilities of drawing on the screen. The graphics context maintains states such as the color and font used in drawing, as well as interacting with the underlying operating system to perform the drawing. In Java, custom painting is done via the java.awt.Graphics class, which manages a graphics context, and provides a set of device-independent methods for drawing texts, figures and images on the screen on different platforms.
+       The java.awt.Graphics is an abstract class, as the actual act of drawing is system-dependent and device-dependent. Each operating platform will provide a subclass of Graphics to perform the actual drawing under the platform, but conform to the specification defined in Graphics.
+Program Specifications
+       Design a program that allows users draw like ms paint.
+Function details: 
+1. Right display color to draw.
+2. Left display main area allows user draw
+Expectation of User interface:
+
+
+
+
+Guidelines:
+
+	
+
