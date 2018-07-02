@@ -1,0 +1,34 @@
+
+LAB221 AssignmentType:Short AssignmentCode:J2.S.P0119LOC:50Slot(s):1
+Title
+	Use PreparedStatement in JDBC
+Background Context
+A PreparedStatement is a special kind of Statement object with some useful features. Remember, you need a Statement in order to execute either a query or an update. You can use a PreparedStatement instead of a Statement and benefit from the features of thePreparedStatemen	t.
+The PreparedStatement's primary features are:
+- Easy to insert parameters into the SQL statement.
+- Easy to reuse the PreparedStatement with new parameters.
+- May increase performance of executed statements.
+- Enables easier batch updates
+       
+Program Specifications
+Create a program to update data using PreparedStatement in JDBC. The First, student should login MS SQL to create a database name “FU_DB” in MS SQL, then student creates a table name “Stocks” with fields:
+- StockID: type is integer
+- StockName: string
+- Address: string
+- DateAvailable: Date
+- Note: string
+    Main functions described as below:
+
+Function details:
+
+1. Generate data and display on the dialog
+2. Edit data and use JDBC to insert those data into “Stocks” table (must use PreparedStatement to update data)
+ Expectation of User interface:
+The screen should be as:
+
+
+
+Data on the form is generated, when click “Insert to DB” button the data will be store in the database
+
+
+Guidelines
