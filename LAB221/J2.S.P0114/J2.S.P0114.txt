@@ -1,0 +1,28 @@
+
+LAB221 AssignmentType:Short AssignmentCode:J2.S.P0114LOC:70Slot(s):2
+Title
+	Create database
+Background Context
+       NA
+       
+Program Specifications
+Use swing library to create a program interact with MS SQL database.
+Main functions described as below:
+ 
+Function details:
+
+1. Create a new database name “FU_DB”
+2. Create a table name “Stocks” with fields:
+- StockID: type is integer
+- StockName: string
+- Address: string
+- DateAvailable: Date
+- Note: string
+3. Insert into “Stocks” table 5 records
+4. Display all 5 records on the form
+Expectation of User interface:
+The screen should be as:
+
+
+
+Guidelines
