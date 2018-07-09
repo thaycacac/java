@@ -1,0 +1,10 @@
+Select @@version
+
+SELECT
+  t.TABLE_NAME
+FROM
+  INFORMATION_SCHEMA.TABLES t
+WHERE t.TABLE_TYPE = 'BASE TABLE'
+
+SELECT DB_NAME() AS [Current Database];  
+GO  
