@@ -1,0 +1,29 @@
+
+LAB221 AssignmentType:Short AssignmentCode:J2.S.P0116LOC:100Slot(s):2
+Title
+	Use transaction in JDBC
+Background Context
+In computer science, transaction processing is information processing that is divided into individual, indivisible operations called transactions. Each transaction must succeed or fail as a complete unit; it can never be only partially complete.
+For example, when you purchase a book from an online bookstore, you exchange money (in the form of credit) for a book. If your credit is good, a series of related operations ensures that you get the book and the bookstore gets your money. However, if a single operation in the series fails during the exchange, the entire exchange fails. You do not get the book and the bookstore does not get your money. The technology responsible for making the exchange balanced and predictable is called transaction processing. Transactions ensure that data-oriented resources are not permanently updated unless all operations within the transactional unit complete successfully. By combining a set of related operations into a unit that either completely succeeds or completely fails, one can simplify error recovery and make one's application more reliable.
+       
+Program Specifications
+Create a program to update data using transaction in JDBC. The First, student should login MS SQL to create a database name “FU_DB” in MS SQL, then student creates a table name “Stocks” with fields:
+- StockID: type is integer
+- StockName: string
+- Address: string
+- DateAvailable: Date
+- Note: string
+    Main functions described as below:
+
+Function details:
+
+1. Generate data and display on the dialog
+2. Edit data and use JDBC to insert those data into “Stocks” table (use transaction)
+ Expectation of User interface:
+The screen should be as:
+
+
+
+Data on the form is generated, when click “Insert to DB” button the data will be store in the database
+
+Guidelines
