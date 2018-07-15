@@ -52,6 +52,22 @@ public class MyList {
       while(p != null && p.info != x) p = p.next;
       return p;
     }
+//delete the first node
+void dele(Node q)
+ {Node f,p; f=null;p=head;
+  while(p!=null)
+   {if(p==q) break;
+    f=p;p=p.next;
+   }
+  if(p==null) return;
+  if(f==null)
+   {head=head.next;
+    if(head==null) tail=null;
+    return;
+   }
+  f.next=p.next;
+  if(f.next==null) tail=f;
+ }
     //remove a node from the list
     public void remove(Node p) 
     {if(p == null) return;
