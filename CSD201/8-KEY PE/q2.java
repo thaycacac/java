@@ -52,6 +52,35 @@ public class q2 {
      r = k+h+1;
      return(r);
     }
+    //preorder a tree
+    public void preOrder(Node p) {
+     if(p == null) return;
+     visit(p);
+     preOrder(p.left);
+     preOrder(p.right);
+    }
+    //postorder a tree
+    public void postOrder(Node p) {
+     if(p == null) return;
+     postOrder(p.left);postOrder(p.right);visit(p);
+    }
+    //inorder a tree
+    public void inOrder(Node p) {
+     if(p == null) return;
+     inOrder(p.left);visit(p);inOrder(p.right);
+    }
+    //breadth first traversal
+    public void BFT(Node p)
+    {if(p == null) return;
+     MyQueue m = new MyQueue();
+     m.enqueue(p);
+     while(!m.isEmpty()) {
+      Node q = (Node)m.dequeue();
+      visit(q);
+      if(q.left != null) m.enqueue(q.left);
+       if(q.right != null) m.enqueue(q.right);
+     }
+    }
     //delete by copy
     void deleByCopy(String xName)// Delete the root of  the tree by copying : deleByCopy(root.info.name);
    {Node f,p;
