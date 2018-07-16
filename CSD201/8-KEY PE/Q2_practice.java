@@ -2,8 +2,7 @@
  *
  * @author Thaycacac
  */
-public class q2 {
-    //insert node
+//insert node with object
     void insert(Person x)
      {Node q=new Node(x);
      if(isEmpty())
@@ -22,7 +21,8 @@ public class q2 {
        } 
       if(x.name.compareTo(f.info.name)<0) f.left=q; else f.right=q;
     } 
-    //inser elements having age > 4
+
+//inser elements having age > 4
     void insertCondition(BSTree h){
       int xAge = 4;
      MyQueue q = new MyQueue();
@@ -34,7 +34,18 @@ public class q2 {
         if(r.right!=null) q.enqueue(r.right);
        }
     }
-    //calculate the height
+
+//preorder with condition: 3 <= price <= 5
+	void preOrder2(Node p, RandomAccessFile f) throws Exception
+     {if(p==null) return;
+     if(p.info.price>=3&&p.info.price<=5){
+        fvisit(p,f);
+     }
+     preOrder2(p.left,f);
+     preOrder2(p.right,f);
+     }
+	
+//calculate the height
     int height(Node p)// import root
     {if(p==null) return(0);
      int k,h,r;
@@ -43,46 +54,9 @@ public class q2 {
       r = k>h?k:h;
       return(r+1);
     }
-    //calculate number of node
-    int count(Node p)//import root
-    {if(p==null) return(0);
-     int k,h,r;
-     k = count(p.left);
-     h = count(p.right);
-     r = k+h+1;
-     return(r);
-    }
-    //preorder a tree
-    public void preOrder(Node p) {
-     if(p == null) return;
-     visit(p);
-     preOrder(p.left);
-     preOrder(p.right);
-    }
-    //postorder a tree
-    public void postOrder(Node p) {
-     if(p == null) return;
-     postOrder(p.left);postOrder(p.right);visit(p);
-    }
-    //inorder a tree
-    public void inOrder(Node p) {
-     if(p == null) return;
-     inOrder(p.left);visit(p);inOrder(p.right);
-    }
-    //breadth first traversal
-    public void BFT(Node p)
-    {if(p == null) return;
-     MyQueue m = new MyQueue();
-     m.enqueue(p);
-     while(!m.isEmpty()) {
-      Node q = (Node)m.dequeue();
-      visit(q);
-      if(q.left != null) m.enqueue(q.left);
-       if(q.right != null) m.enqueue(q.right);
-     }
-    }
-    //delete by copy
-    void deleByCopy(String xName)// Delete the root of  the tree by copying : deleByCopy(root.info.name);
+	
+//Delete the root of  the tree by copying : deleByCopy(root.info.name);
+    void deleByCopy(String xName)
    {Node f,p;
      f=null;p=root;
      while(p!=null)
@@ -142,10 +116,10 @@ public class q2 {
            }
         }
     }
-    //rotate to right 
-    /*
-    Check if the root having non-empty left-son then rotate it to right about its left-son.
-    root = rotateToRight(root);
+	
+/*
+Check if the root having non-empty left-son then rotate it to right about its left-son.
+root = rotateToRight(root);
     */
     Node rotateToRight(Node p)
     {if(p==null || p.left==null) return(p);
@@ -154,9 +128,9 @@ public class q2 {
         q.right=p;
         return(q);
     }
-    /*Calculate balance factor of all nodes. Display all node with balance 
-    factor by breadth-first traverse. Display also the information about whether 
-    a given binary search tree is height balanced (AVL tree) or not.*/
+/*Calculate balance factor of all nodes. Display all node with balance 
+factor by breadth-first traverse. Display also the information about whether 
+a given binary search tree is height balanced (AVL tree) or not.*/
     void calculateBalanceAndDisplay(RandomAccessFile  f123) throws Exception{
       boolean isAVL = true;
      MyQueue q = new MyQueue();
@@ -175,7 +149,8 @@ public class q2 {
      else
       f123.writeBytes("\r\nThe tree is an AVL tree\r\n");
   }
-    //calculate level all node
+  
+//calculate level all node
     void levelNode(RandomAccessFile  f123) throws Exception{
       MyQueue q = new MyQueue();
     if(isEmpty()) return; 
@@ -191,10 +166,10 @@ public class q2 {
 
      breadthLevel(root,f123);
   }
-    /*
-    Balance a binary search tree by simple balancing algorithm. Display all 
-    node by breadth-first traverse.
-    */
+/*
+Balance a binary search tree by simple balancing algorithm. Display all 
+node by breadth-first traverse.
+*/
     
     void inOrder(ArrayList<Person> t, Node p)
   {if(p==null) return;
@@ -219,14 +194,3 @@ void balance()
    }
     
 }
-
-//__________________________________________________
-//preorder with condition: 3 <= price <= 5
-void preOrder2(Node p, RandomAccessFile f) throws Exception
-     {if(p==null) return;
-     if(p.info.price>=3&&p.info.price<=5){
-        fvisit(p,f);
-     }
-     preOrder2(p.left,f);
-     preOrder2(p.right,f);
-     }

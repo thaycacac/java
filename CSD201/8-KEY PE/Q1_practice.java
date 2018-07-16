@@ -2,20 +2,21 @@
  *
  * @author Thaycacac
  */
-public class q1 {
-    //add last
+//add last
     void addLast(Person x){
         Node q = new Node(x);
         if(isEmpty()){head=tail=q;return;}
         tail.next=q;tail=q;
     }
-    //add first
+	
+//add first
     public void addFirst(Person x) 
     {Node p = new Node(x);
      if(isEmpty()) {head = tail = p;}
      else {p.next = head; head = p;}
     }
-    //add if age > 4
+	
+//add if age > 4
     void addLastCondition(){
         Node p=head;
         while(p!=null){
@@ -23,7 +24,8 @@ public class q1 {
             p=p.next;
         }
     }
-    //dele first no age < 6
+	
+//dele first no age < 6
     void deleteFirstCondition(){
      Node p = head;
      while(p != null){
@@ -31,22 +33,23 @@ public class q1 {
          p=p.next;
      }
     }
-    //delete node
-void dele(Node q)
- {Node f,p; f=null;p=head;
-  while(p!=null)
-   {if(p==q) break;
-    f=p;p=p.next;
-   }
-  if(p==null) return;
-  if(f==null)
-   {head=head.next;
-    if(head==null) tail=null;
-    return;
-   }
-  f.next=p.next;
-  if(f.next==null) tail=f;
- }
+	
+//delete node
+	void dele(Node q)
+	 {Node f,p; f=null;p=head;
+	  while(p!=null)
+	   {if(p==q) break;
+		f=p;p=p.next;
+	   }
+	  if(p==null) return;
+	  if(f==null)
+	   {head=head.next;
+		if(head==null) tail=null;
+		return;
+	   }
+	  f.next=p.next;
+	  if(f.next==null) tail=f;
+	 }
     //sort by string
     public void sort() 
     {Node pi,pj; Person x;
@@ -61,8 +64,9 @@ void dele(Node q)
          pi=pi.next;
        }
     }
+	
 //sort by integer/ double
-public void sort() 
+	public void sort() 
     {Node pi,pj; Car x;
        pi=head;
        while(pi!=null)
@@ -75,7 +79,8 @@ public void sort()
          pi=pi.next;
        }
     }
-    //traverse
+	
+//traverse
     public void traverse(){
       MyList h=new MyList();
        Node p=head;Person x;
@@ -85,7 +90,8 @@ public void sort()
          }
        head=h.head;tail=h.tail;
     }
-    //append another list
+	
+//append another list
     void appendAnotherList(MyList h){
       Node p=h.head;
          while(p!=null)
@@ -93,7 +99,8 @@ public void sort()
             p=p.next;
       }
     }
-    //delete index
+	
+//delete index
     void deleteAt(int k){
       Node p=head;
         int i=0;
@@ -103,12 +110,13 @@ public void sort()
            }
         dele(p);
     }
-    //change name first
+	
+//change name first
     void changeNameFirst(){
       Node p=head;
         while(p!=null)
          {if(p.info.name.equals("C6")) {p.info.name="CX";break;}
            p=p.next;
          }
-  }
+	}
 }
