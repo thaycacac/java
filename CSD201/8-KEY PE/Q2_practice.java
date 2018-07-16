@@ -121,7 +121,7 @@
 Check if the root having non-empty left-son then rotate it to right about its left-son.
 root = rotateToRight(root);
     */
-    Node rotateToRight(Node p)
+    Node rotateToRight(Node p)//root = rotateToRight(root)
     {if(p==null || p.left==null) return(p);
         Node q=p.left;
         p.left=q.right;
