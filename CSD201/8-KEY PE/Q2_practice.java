@@ -193,4 +193,49 @@ void balance()
      balance(t,0,n-1);
    }
     
-}
+//delete by copying the first node having both 2 sons and price < 7
+	public void deleteByCopy(int x)  //deleteByCopy(7); 
+    {Node p = search(root, x);
+     if(p==null) {System.out.println("Key "+x+" does not exists, deletion failed"); return;}
+     //find f is father of p
+     Node f = null, q = root;
+     while(q!=p) {f=q; 
+      if(q.info>p.info) q=q.left;
+      else q=q.right;}
+      //1.p has no child
+      if(p.left==null&&p.right==null) {
+       if(f==null) root=null;
+       else if(f.left==p) f.left=null;
+       else f.right = null;
+      }
+      //2.p has left child only
+      else if(p.left!=null&&p.right==null) {
+       if(f==null) root=p.left;
+       else if(f.left==p) f.left=p.left;
+       else f.right=p.left;
+      }
+      //3.p has right child only
+      else if(p.left==null&&p.right!=null) {
+       if(f==null) root=p.right;
+       else if(f.left==p) f.left=p.right;
+       else f.right=p.right;
+      }
+      //4.p has both child
+      else if(p.left!=null&&p.right!=null) {
+       //tim q la node lon nhat ben con trai cua p -> q la con phai nhat
+       //cua con trai cua p
+       q = p.left;f = null;
+       while(q.right != null) {f=q;q=q.right;}
+       p.info = q.info;
+       //delete q
+       if(f==null) p.left=q.left;
+       else f.right=q.left;
+      }
+    }
+	public Node search(Node p, double key) //use in deleteByCopy(double x) 
+    {
+    if(p == null) return null;
+     if(p.info.price < key) return p;
+     else if(p.info.price > key) return search(p.left, key);
+     else return search(p.right, key);
+    }
