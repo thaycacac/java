@@ -190,3 +190,14 @@ void balance()
    }
     
 }
+
+//__________________________________________________
+//preorder with condition: 3 <= price <= 5
+void preOrder2(Node p, RandomAccessFile f) throws Exception
+     {if(p==null) return;
+     if(p.info.price>=3&&p.info.price<=5){
+        fvisit(p,f);
+     }
+     preOrder2(p.left,f);
+     preOrder2(p.right,f);
+     }
