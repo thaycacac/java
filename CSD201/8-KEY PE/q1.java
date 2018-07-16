@@ -10,10 +10,10 @@ public class q1 {
         tail.next=q;tail=q;
     }
     //add first
-    void addFirst(String xName, int xAge){
-        if(xName.charAt(0)=='B') return;
-        Person x=new Person(xName,xAge);
-        addFirst(x);
+    public void addFirst(Person x) 
+    {Node p = new Node(x);
+     if(isEmpty()) {head = tail = p;}
+     else {p.next = head; head = p;}
     }
     //add if age > 4
     void addLastCondition(){
@@ -31,7 +31,23 @@ public class q1 {
          p=p.next;
      }
     }
-    //sort by name
+    //delete node
+void dele(Node q)
+ {Node f,p; f=null;p=head;
+  while(p!=null)
+   {if(p==q) break;
+    f=p;p=p.next;
+   }
+  if(p==null) return;
+  if(f==null)
+   {head=head.next;
+    if(head==null) tail=null;
+    return;
+   }
+  f.next=p.next;
+  if(f.next==null) tail=f;
+ }
+    //sort by string
     public void sort() 
     {Node pi,pj; Person x;
        pi=head;
@@ -39,6 +55,20 @@ public class q1 {
          {pj=pi.next;
           while(pj!=null)
            {if(pj.info.name.compareTo(pi.info.name)<0)
+               {x=pi.info;pi.info=pj.info;pj.info=x;}
+            pj=pj.next;
+           }
+         pi=pi.next;
+       }
+    }
+//sort by integer/ double
+public void sort() 
+    {Node pi,pj; Car x;
+       pi=head;
+       while(pi!=null)
+         {pj=pi.next;
+          while(pj!=null)
+           {if(pj.info.price<pi.info.price)
                {x=pi.info;pi.info=pj.info;pj.info=x;}
             pj=pj.next;
            }
