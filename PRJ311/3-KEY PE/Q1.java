@@ -125,3 +125,5 @@ private void changeFontStyleByComboBox() {
         lbText.setFont(new Font(fontName, fontSize, fontSize));
     }
 
+//simple format
+    String timeStamp = new SimpleDateFormat("ss/mm/HH").format(Calendar.getInstance().getTime());
