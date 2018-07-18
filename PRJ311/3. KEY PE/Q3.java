@@ -27,6 +27,12 @@
         }
     }
 
+//load table
+	public void loadTable() {
+        String sql = "SELECT * FROM dbo.Outcomes";
+        initTable(sql, dftm, jTable1);
+    }
+
 //load data
     public void loadData() {
         try {
@@ -123,3 +129,59 @@
             initTable(sql, dftm2, form.getTblResult());
         }
     }
+	
+//add item to combobox
+	public void addItemCombobox() {
+        try {
+            String sql = "SELECT o.battle FROM dbo.Outcomes o";
+            ResultSet rs = dao.getData(sql);
+            while (rs.next()) {
+                cbbSelectBattle.addItem(rs.getString(1)); //to add combobox
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+	
+//click combobox change info other field
+	public void clickCombobox() {
+        setShip();
+        setResult();
+        cbbSelectBattle.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent ie) {
+                setShip();
+                setResult();
+            }
+        });
+    }
+	public void setResult() {//example for click combobox
+        try {
+            String sql = "SELECT o.result FROM dbo.Outcomes o\n"
+                    + "WHERE o.battle = '" + cbbSelectBattle.getSelectedItem().toString() + "'";
+            ResultSet rs = dao.getData(sql);
+            while (rs.next()) {
+                tfNewResult.setText(rs.getString(1));
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+	
+//change info when user click row
+    public void changeInfoClickRowInTable(){
+        int currentRout = jTable1.getSelectedRow();
+        String battle = jTable1.getValueAt(currentRout , 1).toString();
+	}
+	
+//pop up messages
+	JOptionPane.showMessageDialog( null, "Success");
+	
+//when date null
+	Date date = rs.getDate(4);
+    if (date == null) {
+        s = "Null";
+    } else {
+        s = new SimpleDateFormat("dd-MM-yyyy").format(rs.getDate(4));
+    }
+

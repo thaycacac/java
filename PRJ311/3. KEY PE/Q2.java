@@ -3,3 +3,6 @@
 
 //edit system
     System.exit(0);
+
+//format date
+	String timeStamp = new SimpleDateFormat("ss/mm/HH").format(Calendar.getInstance().getTime());
