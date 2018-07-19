@@ -6,7 +6,7 @@
  /*Table content to search*/
  
  ||____ADD______//add last
- ||	    ||______//add first
+ ||	||______//add first
  ||     ||______//add many
  ||     ||______//add if age > 4
  ||     ||______//add element have max age
