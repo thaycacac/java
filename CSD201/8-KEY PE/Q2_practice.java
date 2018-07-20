@@ -4,7 +4,7 @@
  */
  
  ||__TRAVERSAL__//breadth-first traversal
- ||	    ||______//preorder
+ ||     ||______//preorder
  ||     ||______//postorder
  ||     ||______//inorder
  ||     ||______//use BFS change second node have age >=5 to age = 10
