@@ -3,8 +3,47 @@
  * @author Thaycacac
  */
  
+ ||__TRAVERSAL__//breadth-first traversal
+ ||	    ||______//preorder
+ ||     ||______//postorder
+ ||     ||______//inorder
+ ||     ||______//use BFS change second node have age >=5 to age = 10
+ ||     ||______//preorder with condition: 3 <= price <= 5
+ ||
+ ||___INSERT____//insert by string
+ ||       ||____//insert by integer/double
+ ||       ||____//insert have age > 4 use BTF
+ ||
+ ||___SEARCH____//search
+ ||       ||____//search by string
+ ||       ||____//search by integer/double
+ ||
+ ||___COUNT_____//count node in tree
+ ||       ||____//count node have 1 child
+ ||       ||____//count node have exactly 2 child
+ ||       ||____//count height of tree
+ ||
+ ||___DELETE____//delete by copy integer/double
+ ||     ||______//delete by node p
+ ||
+ ||___BALANCE___//balance tree
+ ||     ||______//balance simple array list
+ ||
+ ||___ROTATE____//rotate left
+ ||    ||_______//rotate right
+ ||    ||_______//rotate any node
+ ||    ||_______//rotate right root 
+ ||
+ ||___GET_______//get node father
+ ||       ||____//get node by string
+ ||       ||____//get node by integer/double
+ ||___OTHER_____//calculate level of node
+ ||      ||_____//calculate factor
+ ||      ||_____//copy all node to tree by inorder traversal
+ ||      ||_____//example
+ 
 //breadth-first traversal
-	public void bfs(Node p){ //input root
+    public void bfs(Node p){ //input root
         if(p == null) return;
         MyQueue m = new MyQueue();
         m.enqueue(p);
@@ -21,7 +60,7 @@
     }
 	
 //preorder
-	public void preorder(Node p){
+    public void preorder(Node p){
         if(p == null){
             return;
         }
@@ -41,7 +80,7 @@
     }
 	
 //inorder
-	public void inorder(Node p){
+    public void inorder(Node p){
         if(p == null){
             return;
         }
@@ -51,7 +90,7 @@
     }
  
 //use BFS change second node have age >=5 to age = 10
-	public void changeNodeCondition(Node p){
+    public void changeNodeCondition(Node p){
         if(p == null) return;
         MyQueue m = new MyQueue();
         m.enqueue(p);
@@ -74,17 +113,17 @@
     }
  
 //preorder with condition: 3 <= price <= 5
-	void preOrder2(Node p, RandomAccessFile f) throws Exception{
+   void preOrder2(Node p, RandomAccessFile f) throws Exception{
 	 if(p==null) return;
      if(p.info.price>=3&&p.info.price<=5){
         fvisit(p,f);
      }
      preOrder2(p.left,f);
      preOrder2(p.right,f);
-     }
+   }
 	 
 //insert by string
-	public void insert(Person x){
+    public void insert(Person x){
         Node p = new Node(x);
         if(isEmpty()){root = p; return;}
         Node f = null;
@@ -102,7 +141,7 @@
     }
     
 //insert by integer/double
-	public void insert(Car x){
+    public void insert(Car x){
 	 Node q=new Node(x);
      if(isEmpty())
       {root=q;
@@ -122,7 +161,7 @@
     } 
  
 //insert have age > 4 use BTF
-	public void breadthModifier(){
+    public void breadthModifier(){
 	if(root == null){ return; //change
             MyQueue m = new MyQueue();
             m.enqueue(root);
@@ -142,12 +181,12 @@
 	}
  	 
  //search
-	public Node search(Person x){
+    public Node search(Person x){
         return search(root, x);
     }
 
 //search by string
-	public Node search(Node p, Person x){
+    public Node search(Node p, Person x){
         if(p == null){
             return null;
         }
@@ -162,8 +201,8 @@
         }
     }
  
- //search by integer/double
-	public Node search(Node p, int key){
+//search by integer/double
+    public Node search(Node p, int key){
 		if(p == null) return null;
 		 if(p.info == key) return p;
 		 else if(p.info > key) return search(p.left, key);
@@ -171,7 +210,7 @@
 		}
  
 //count node in tree
-	public int count(){
+    public int count(){
         int c = 0;
         Node p = root;
         if(isEmpty()){
@@ -189,7 +228,7 @@
     }
 	
 //count node have 1 child
-	int countModifer(Node p) {
+   int countModifer(Node p) {
       int n = 0;
       MyQueue m = new MyQueue();
         m.enqueue(p);
@@ -205,7 +244,7 @@
   }
  
 //count node have exactly 2 child
-	int countNodeCo2con(Node p) {
+    int countNodeCo2con(Node p) {
       int n = 0;
       MyQueue m = new MyQueue();
         m.enqueue(p);
@@ -216,9 +255,9 @@
             if(q.left != null && q.right != null) n ++;
         }
       return n;
-	}
+     }
   
-//height of tree
+//count height of tree
     public int height(Node p) {
         if (p == null) {
             return 0;
@@ -229,7 +268,7 @@
     }
  
 //delete by copy integer/double
-	public void deleByCopy(int xPrice) {
+    public void deleByCopy(int xPrice) {
         if (root == null) {
             System.out.println(" The tree is empty, no deletion");
             return;
@@ -319,7 +358,7 @@
     }
  
 //delete by node p
-	public void deleteByCopy(Node p) {
+    public void deleteByCopy(Node p) {
         if (isEmpty()) {
             return;
         }
@@ -396,7 +435,7 @@
     }
  
 //balance tree
-	public void balance(ArrayList a, int first, int last){
+    public void balance(ArrayList a, int first, int last){
         if(first > last) return;
         int m = (first + last) /2;
         Person x = ((Node)a.get(m)).info;
@@ -406,7 +445,7 @@
     }
 	
 //balance simple array list
-	public void balance(Node p){
+    public void balance(Node p){
         ArrayList a = new ArrayList();
         buildArray(a, p);
         int first = 0;
@@ -417,7 +456,7 @@
     } 
  
 //rotate left
-	public Node rotateLeft(Node p){//must be have node right
+    public Node rotateLeft(Node p){//must be have node right
         if(p.right == null){
             return p;
         }
@@ -426,12 +465,9 @@
         q.left = p;
         return q;
     }
-/*example: rotate node left of root
-	root.left = rotateLeft(root.left);
-*/
 
 //rotate right
-	public Node rotateRight(Node p){
+    public Node rotateRight(Node p){
         if(p.left == null){
             return p;
         }
@@ -442,7 +478,7 @@
     }
 
 //rotate any node
-	public void rotateModifier(Node node){
+       public void rotateModifier(Node node){
         Node nodeRotate = rotateToRight(node);
 		Node nodeFather = father(node.info.price);
 		if(nodeFather==null) root = nodeRotate;
@@ -451,9 +487,18 @@
 			else  nodeFather.right = node;
          }
 	}
+
+//rotate right root 
+    Node rotateToRight(Node p){//root = rotateToRight(root)
+    if(p==null || p.left==null) return(p);
+        Node q=p.left;
+        p.left=q.right;
+        q.right=p;
+        return(q);
+    }
 	
 //get node father
-	Node father(int xPrice){
+    Node father(int xPrice){
 	 Node f,p;
      f=null;p=root;
      while(p!=null)
@@ -465,7 +510,7 @@
     }
 		
 //get node by string
-	public Node getNode(String xName) {
+    public Node getNode(String xName) {
         Node p = root;
         while (p != null) {
             if (p.info.name.compareToIgnoreCase(xName) > 0) p = p.left;
@@ -487,7 +532,7 @@
     }
  
 //calculate level of node
-	public void calLevel(Node p){
+    public void calLevel(Node p){
         if(p == null){
             return;
         }
@@ -509,7 +554,7 @@
     }
 
 //calculate factor
-	public void calculateBalance(Node p){
+    public void calculateBalance(Node p){
         if(p == null){
             return;
         }
@@ -531,7 +576,7 @@
     }
 
 //copy all node to tree by inorder traversal
-	public void buildArray(ArrayList a, Node p){
+    public void buildArray(ArrayList a, Node p){
         if(p == null){
             return;
         }
@@ -540,14 +585,6 @@
         buildArray(a, p.right);
     }
 
-//rotate right root 
-    Node rotateToRight(Node p){//root = rotateToRight(root)
-    if(p==null || p.left==null) return(p);
-        Node q=p.left;
-        p.left=q.right;
-        q.right=p;
-        return(q);
-    }
 	
 /*Calculate balance factor of all nodes. Display all node with balance 
 factor by breadth-first traverse. Display also the information about whether 
