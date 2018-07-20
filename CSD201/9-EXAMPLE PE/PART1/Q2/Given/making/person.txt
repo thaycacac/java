@@ -1,0 +1,16 @@
+Line 0 - The next line is line  1
+A6  A2  A7  A1  A5  A9  A4  A8  A3   B6  B2  B7  B1  B5  B9  B4  B8  B3 
+ 1    2      3    4      5    6    7     8     9      1    2      3    4      5    6    7     8     9
+
+Line 4 - The next line is line  5
+C6  C2  C7  C1  C5  C9  C4  C8  C3 
+ 1    2      3    4      5    6    7     8     9 
+
+Line 8 - The next line is line  9
+C30   C10   C35   C05    C25   C45   C20  C 40    C15   C20
+   1        2         3        4         5        6        7       8           9       10
+
+Line 12 - The next line is line  13
+C0   C1  C2  C3  C4  C5   C6   C7  C8  C9 
+ 30   10   35    5    25   45   20   40    15   20
+END

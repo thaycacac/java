@@ -24,6 +24,7 @@
  ||       ||____//count height of tree
  ||
  ||___DELETE____//delete by copy integer/double
+ ||     ||______//delete by copy string
  ||     ||______//delete by node p
  ||
  ||___BALANCE___//balance tree
@@ -40,7 +41,9 @@
  ||___OTHER_____//calculate level of node
  ||      ||_____//calculate factor
  ||      ||_____//copy all node to tree by inorder traversal
- ||      ||_____//example
+ ||      ||_____//Calculate balance factor 
+ ||      ||_____//Calculate level all node
+ ||      ||_____//balance a binary search tree
  
 //breadth-first traversal
     public void bfs(Node p){ //input root
@@ -102,7 +105,7 @@
             if(q.right != null){
                 m.enqueue(q.right);
             }
-            if(q.info.age >= 5){ ////////////////////////////////////////////////////////////////////
+            if(q.info.age >= 5){ //maybe or not
                 c++;
                 if(c == 2){
                     q.info.age = 10;
@@ -210,22 +213,14 @@
 		}
  
 //count node in tree
-    public int count(){
-        int c = 0;
-        Node p = root;
-        if(isEmpty()){
-            return c;
-        }
-        MyQueue m = new MyQueue();
-        m.enqueue(p);
-        while(!m.isEmpty()){
-            Node q = (Node)m.dequeue();
-            if(q.left != null) m.enqueue(q.left);
-            if(q.right != null) m.enqueue(q.right);
-            c++;
-        }
-        return c;
-    }
+    public int count(Node p){
+	 if(p==null) return(0);
+	   int k,h,r;
+	   k = count(p.left);
+	   h = count(p.right);
+	   r = k+h+1;
+	   return(r);
+	 }
 	
 //count node have 1 child
    int countModifer(Node p) {
@@ -354,6 +349,68 @@
             } else {
                 fr.right = rp.left;
             }
+        }
+    }
+	
+//delete by copy string
+    void deleByCopy(String xName){
+	 Node f,p;
+     f=null;p=root;
+     while(p!=null)
+       {if(p.info.name.equals(xName)) break;
+         f=p;
+         if(xName.compareTo(p.info.name)<0) p=p.left; else p=p.right;
+       }
+      if(p==null) return; // not found
+      
+      // p is leaf node
+      if(p.left==null && p.right==null)
+        {if(f==null) // p=root
+           {root=null;
+           }
+           else
+            {if(p==f.left) f.left=null; f.right=null;
+             }
+          return;
+        } 
+
+      // p has left child only
+      if(p.left!=null && p.right==null)
+        {if(f==null) // p=root
+           {root=p.left;
+           }
+           else
+            {if(p==f.left) f.left=p.left; f.right=p.left;
+             }
+          return;
+        } 
+
+      // p has right child only
+      if(p.left==null && p.right!=null)
+        {if(f==null) // p=root
+           {root=p.right;
+           }
+           else
+            {if(p==f.left) f.left=p.right; f.right=p.right;
+             }
+          return;
+        } 
+
+      // p has both 2 children
+      if(p.left!=null && p.right!=null)
+        {// find the right most node
+          Node q=p.left;
+          Node frp, rp; frp=null;rp=q;
+          while(rp.right!=null) {frp=rp;rp=rp.right;}
+          // rp is the right most node on the left child
+          p.info=rp.info;
+          if(frp==null) // rp=q
+           {p.left=q.left;
+           }
+           else
+           {
+            frp.right=rp.left; 
+           }
         }
     }
  
@@ -586,26 +643,78 @@
     }
 
 	
-/*Calculate balance factor of all nodes. Display all node with balance 
-factor by breadth-first traverse. Display also the information about whether 
-a given binary search tree is height balanced (AVL tree) or not.*/
-    void calculateBalanceAndDisplay(RandomAccessFile  f123) throws Exception{
-      boolean isAVL = true;
+//Calculate balance factor 
+  void calculateFactorBalance(RandomAccessFile  f123) throws Exception{
+     boolean isAVL = true;
      MyQueue q = new MyQueue();
      q.enqueue(root);Node r;
      while(!q.isEmpty())
        {r = q.dequeue();
-         r.bal = height(r.right) - height(r.left);
+         r.bal = height(r.right) - height(r.left);//int bal in class Node; // balance factor of the node p = height(p.right) - height(p.left)
          if(r.bal>=2 || r.bal<=-2) isAVL = false;
          if(r.left!=null) q.enqueue(r.left);
          if(r.right!=null) q.enqueue(r.right);
        }
-
      breadthBal(root,f123);
     if(!isAVL)
      f123.writeBytes("\r\nThe tree is not an AVL tree\r\n");
      else
       f123.writeBytes("\r\nThe tree is an AVL tree\r\n");
   }
+  public void breadthBal(Node  p, RandomAccessFile f) throws Exception{//use for balance factor
+	if(p==null) return;
+    MyQueue q = new MyQueue();
+    q.enqueue(p); Node r;
+    while(!q.isEmpty())
+     {r = q.dequeue();
+      fvisitBal(r,f);
+      if(r.left != null) q.enqueue(r.left);
+      if(r.right != null) q.enqueue(r.right);
+     }
+   }
+  void fvisitBal(Node p, RandomAccessFile f) throws Exception
+    {if(p != null) 
+      f.writeBytes("("+p.info.name+","+p.info.age+","+p.bal+") ");
+    }
   
-  
+ //Calculate level all node
+  void calculateLevelAllNode(){
+	MyQueue q = new MyQueue();
+    if(isEmpty()) return; 
+    root.level=1;
+     q.enqueue(root);Node r;
+     while(!q.isEmpty())
+       {r = q.dequeue();
+        if(r.left!=null) r.left.level = r.level +1;//level in class node
+        if(r.right!=null) r.right.level = r.level +1;
+        if(r.left!=null) q.enqueue(r.left);
+        if(r.right!=null) q.enqueue(r.right);
+       }
+    }
+	void fvisitLevel(Node p, RandomAccessFile f) throws Exception
+    {if(p != null) 
+      f.writeBytes("("+p.info.name+","+p.info.age+","+p.level+") ");
+    }
+
+//balance a binary search tree 
+	void balance(){
+	 ArrayList<Person> t;
+     t = new ArrayList<Person>();
+     inOrder(t,root);
+     int n = t.size();
+     clear();
+     balance(t,0,n-1);
+   }
+   void inOrder(ArrayList<Person> t, Node p){
+	if(p==null) return;
+    inOrder(t,p.left);
+    t.add(p.info);
+    inOrder(t,p.right);
+  }
+  void balance(ArrayList<Person> t, int i, int j)
+  {if(i>j) return;
+    int k=(i+j)/2;
+    insert(t.get(k));//insert person
+    balance(t,i,k-1);
+    balance(t,k+1,j);
+  }

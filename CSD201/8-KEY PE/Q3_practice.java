@@ -5,38 +5,43 @@
  
  ||__TRAVERSAL__//breadth-first traversal
  ||	    ||______//dept-first traversal
+ ||     ||______//example breadth-first 
  ||
  ||___ALGORITHM_//dijkstra
- ||	         ||_//euler cycle
+ ||          ||_//euler cycle
  ||
- ||___OTHER_____//path from vertext u to vertext v
- ||      ||_____//conectivity
- ||      ||_____//calculate degree
+ ||___OTHER_____//count the connectivity parts 
+
 
 //breadth-first traversal
-  void breadth(boolean [] visited, int k, RandomAccessFile f) throws Exception
-   {GQueue q = new GQueue();
+  void breadth(boolean [] visited, int k, RandomAccessFile f) throws Exception{
+	GQueue q = new GQueue();
     int r,i;
     boolean [] enqueued = new boolean[20];
     for(i=0;i<n;i++) enqueued[i]=false;
     q.enqueue(k); enqueued[k]=true;
     while(!q.isEmpty())
      {r = q.dequeue();
-      if(!visited[r]) {fvisit(r,f);visited[r] = true;}
+      if(!visited[r]) {fvisit(r,f);//modifier function fvisit
+	  visited[r] = true;}
       for(i=0;i<n;i++)
        {if(!visited[i] && !enqueued[i] && a[r][i]>0) {q.enqueue(i);enqueued[i]=true;}
        }
      }
    }
 
-  void breadth(int  k, RandomAccessFile f) throws Exception
-   {boolean [] visited = new boolean[20];
+  void breadth(int  k, RandomAccessFile f) throws Exception{
+	boolean [] visited = new boolean[20];
     int i;
     for(i=0;i<n;i++) visited[i]=false;
     breadth(visited,k,f);
     for(i=0;i<n;i++) if(!visited[i]) breadth(visited,i,f);
    }
 
+//breadth first print degree with: A(4) E(3) F(3) G(2) I(3) B(2) C(1) H(2) D(1)
+   void fvisitDeg(int i, RandomAccessFile f) throws Exception{
+	f.writeBytes(" "+v[i]+"("+deg[i]+")");
+   }
 //dept-first traversal
   void depth(boolean [] visited,int k, RandomAccessFile f) throws Exception{
 	fvisit(k,f);visited[k]=true;
@@ -117,7 +122,7 @@
     f.writeBytes("\n");
   }
 
-//euler cycle
+//count degree
  int deg(int i) {
      int s,j;
      s=0;
@@ -125,11 +130,14 @@
      s += a[i][i];
      return(s);
   }
+  
+//check has Isolated
   boolean hasIsolated() {
     for(int i=0;i<n;i++) 
       if(deg(i)==0) return(true);
     return(false);
   }
+//check connect
   boolean isConnected() {
     boolean [] p = new boolean[n];
     int i,j,r;
@@ -147,6 +155,8 @@
         if(!p[i]) return(false);
     return(true);
   }
+ 
+//check undirected
   boolean isUnDirected() {
     int i,j;
     for(i=0;i<n;i++)
@@ -154,18 +164,24 @@
         if(a[i][j] != a[j][i]) return(false);
     return(true);
   }
+  
+//check all deg even
   boolean allDegEven() {
     for(int i=0;i<n;i++)
       if(deg(i)%2 == 1) return(false);
     return(true);
   }
+  
+//check has euler cycle
   boolean hasEulerCycle() {
     if(!hasIsolated() && isUnDirected() && isConnected() && allDegEven())
        return(true);
       else
         return(false);
   }
-  void eulerCycle(int fro, RandomAccessFile f) throws IOException {
+  
+//euler cycle
+   void eulerCycle(int fro, RandomAccessFile f) throws IOException {
     if(!hasEulerCycle()) {
       return;
     }
@@ -195,85 +211,92 @@
         f.writeBytes(v[eu[i]]+" ");
     }
   }
-}
-
-//path from vertext u to vertext v
-    int u, v;
-    boolean found = false;
-    int [] t;
-    
-    void dfspath(int i, boolean [] c) {       
-        c[i] = true;
-        for (int j = 0; j < n; j++) {
-            if(!c[j] && a[i][j] > 0) {
-                t[j] = i;
-                if(j == v) {
-                    found = true;return;
-                }
-                dfspath(j,c);
-            }
-        }
-    }
-    void path() {
-        boolean [] c = new boolean[n];
-        t = new int[n];
-        dfspath(u, c);
-        if(found) {
-            System.out.println("A path from " + vertex[u] + " to " + vertex[v]);
-            int [] h = new int[n];
-            int m = 0;
-            h[m] = v;
-            while(u != v) {
-                v = t[v];
-                h[++m] = v;
-            }
-            for (int i = m; i >= 0; i--) {
-                visit(h[i]);
-            }
-        }else {
-            System.out.println("A path from " + vertex[u] + " to " + vertex[v] + " not found");
-        }
-    }
-	
-//conectivity
-	int [] tp;
-    int con = 0;
-    void dfscon(int i, boolean [] c) {       
-        tp[i] = con;
-        c[i] = true;
-        for (int j = 0; j < n; j++) {
-            if(!c[j] && a[i][j] > 0) {
-                dfscon(j,c);
-            }
-        }
-    }
-    void connectivity() {
-        con = 0;
-        tp = new int[n];
-        boolean [] c = new boolean[n];
-        for (int i = 0; i < n; i++) {
-            if(!c[i]) {
-                con++;
-                dfscon(i, c);
-            }
-        }
-        //output connectivity vertexs
-        for (int i = 1; i <= con; i++) {
-            System.out.println("Connectivity " + i);
-            for (int j = 0; j < n; j++) {
-                if(tp[j] == i) visit(j);
-            }
-            System.out.println("");
-        }
-    }
-	
-//calculate degree
-   void caculateDegree(){
-      for(int i = 0; i < n; i++){
-          int d = 0;
-          for(int j = 0; j < n; j++){
-              d += a[i][j];
-          }
-          deg[i] = d; // deg was given
+  
+/*
+declare a stack S of characters (a vertex is labeled by a character)
+declare an empty array E (which will contain Euler cycle)
+push the vertex X to S
+while(S is not empty)
+ {ch = top element of the stack S 
+  if ch is isolated then remove it from the stack and put it to E
+   else
+   select the first vertex Y (by alphabet order), which is adjacent
+   to ch,push  Y  to S and remove the edge (ch,Y) from the graph   
+ }
+ the last array E obtained is an Euler cycle of the graph
+*/
+void EulerCycle(int k, RandomAccessFile f) throws Exception{
+	if(!isUndirected() || !isConnected() || !isEvenDegree())
+      {f.writeBytes("Conditions are not satisfied\r\n");
+       return;
       }
-	}
+    MyStack  s = new MyStack();
+    int [][] b = new int[20][20];
+    int [] eu = new int[20]; int m;
+    int i,j,r;
+    for(i=0;i<n;i++)
+      for(j=0;j<n;j++) b[i][j]=a[i][j];
+    s.push(k);//Dua dinh k vao Stack
+    m = 0;//Ban dau chu trinh chua co phan tu nao
+    while(!s.isEmpty())
+      {r = s.top();
+       i=0;
+       while(i<n && b[r][i]==0) i++;//Tim i dau tien de b[r][i]#0
+       if(i==n) //r da la dinh co lap, dua  r  vao chu trinh Euler
+         {eu[m++] = r; s.pop();}//Lay dinh co lap ra khoi Stack
+         else
+          {s.push(i);b[r][i]--;b[i][r]--;}//Loai canh (i,r) khoi do thi
+      }
+    // Display Euler cycle
+    for(i=0;i<m;i++) f.writeBytes(v[eu[i]] + "  ");
+    f.writeBytes("\r\n");
+   }
+
+
+//check conditions for the existence of Euler’s cycle
+ void checkEulerCycle(RandomAccessFile f) throws Exception{
+	if(isUndirected())
+      f.writeBytes("The graph is undirected.\r\n");
+       else
+         f.writeBytes("The graph is directed.\r\n");
+    if(isConnected())
+      f.writeBytes("The graph is connected.\r\n");
+       else
+         f.writeBytes("The graph is not connected.\r\n");
+
+    if(isEvenDegree())
+      f.writeBytes("All vertices have even degree.\r\n");
+       else
+         f.writeBytes("The graph has a vertex with odd degree.\r\n");
+    if(isUndirected() && isConnected() && isEvenDegree())
+      f.writeBytes("Conditions for Euler's cycle are satisfied.\r\n");
+        else
+         f.writeBytes("Conditions for Euler's cycle are not satisfied.\r\n");
+   }
+
+//count the connectivity parts 
+   public int connectedParts(){ //f123.writeBytes("k = " + k + "\r\n"); 
+    boolean [] pushed = new boolean[20];
+    boolean cont = false;
+    int i, j, k, r;
+    for(i=0;i<n;i++) pushed[i]=false;
+    MyStack s = new MyStack();
+    k=0;
+    while(true)
+     {s.clear();
+      i = 0;
+      while(i<n && pushed[i]) i++;
+      if(i==n) break;
+      s.push(i); pushed[i] = true;
+      while(!s.isEmpty())
+        {r = s.pop();
+         for(i=0;i<n;i++)
+          {if(i==r) continue;
+           if(!pushed[i] && a[r][i]>0) {s.push(i); pushed[i] = true;}
+          }
+        }
+       k++;
+     }
+    return(k);
+   }
+   

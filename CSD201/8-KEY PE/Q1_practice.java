@@ -350,8 +350,8 @@
 			int n = size();         
     // for(int i = n-3; i < n; i++) //last 3 element
     // for(int j = i+1; j < n; j++) //first 3 element
-		for(int i = 0; i < 3 - 1; i++){   
-			for(int j = i+1; j < 3; j++){
+		for(int i = 0; i < n - 1; i++){   
+			for(int j = i+1; j < n; j++){
 				Node pi = getNode(i);
 				Node pj = getNode(j);
 				if(pi.info.name.compareToIgnoreCase(pj.info.name) > 0){
@@ -454,15 +454,14 @@
 	}
 	
 //count number of node
-	public int size() {
-        int c = 0;
-        Node p = head;
-        while (p != null) {
-            p = p.next;
-            c++;
-        }
-        return c;
-    } 
+	int count(Node p)
+	 {if(p==null) return(0);
+	   int k,h,r;
+	   k = count(p.left);
+	   h = count(p.right);
+	   r = k+h+1;
+	   return(r);
+	 }
 	
 //reverse list
 	public void reverse() {
