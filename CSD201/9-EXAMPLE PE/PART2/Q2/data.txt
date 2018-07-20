@@ -1,0 +1,38 @@
+line 0 - The next line is line 1 (f1)
+ A   B  C   D  E   F  G   X   Y 
+ 5  10  2   6   4   7   3   6  105
+line 3 - The next line is line 4 (f2)
+ C  D  E   F  G   H    I
+ 6  2   8    4   7    3    5
+line 6 - The next line is line 7 (f3)
+ C  D   E   F  G  H   I    J   K
+ 8   6    9   2   7   1   3   5   4
+line 9 - The next line is line 10 (f4)
+ C  D   E   F  G  H   I    J   K
+ 8   6    9   2   7   1   3   5   4
+line 12 - The next line is line 13 (f5)
+6
+   0    7    9   999   999    14  
+   7    0   10    15   999   999  
+   9   10    0    11   999     2  
+999   15   11    0     6     999  
+999  999 999   6     0       9  
+  14  999   2   999   9       0 
+line 20 - The next line is line 21 (f6)
+7
+0  1  0  0  0  1  0
+1  0  1  1  1  0  0
+0  1  0  1  0  0  0
+0  1  1  0  2  0  0
+0  1  0  2  0  0  1
+1  0  0  0  0  0  1
+0  0  0  0  1  1  0
+END
+7
+0	10	999	999	999	999	999
+999	0	2	10	25	80	999
+30	999	0	8	3	20	999
+20	999	999	0	999	5	10
+999	999	999	4	0	999	999
+8	999	999	999	999	0	5
+8	999	999	999	999	999	0

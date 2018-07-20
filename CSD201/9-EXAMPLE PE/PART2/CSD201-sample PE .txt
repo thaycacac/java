@@ -1,0 +1,107 @@
+
+HOA LAC
+COMPUTER FUNDAMENTAL DEPARTMENTSAMPLE PE- Summer 2017
+xx/xx/2017
+SUBJECT:  DATA STRUCTURES AND ALGORITHMS  using JAVA
+Duration: 85 minutes
+	
+STUDENT INFORMATION
+
+Name:Roll number:Room No:Class:
+FOR STAFF ONLY
+MARK 
+
+MARKED BY
+(NAME AND SIGNATURE)
+
+
+
+
+
+
+Important notes:
+This sample test is used as format for CSD201 PE only. The questions in PE may be quite different. To prepare for doing PE well, you should write programs to perform the following operations:
+LinkedList: add (last, first, after, before, at position), sort(all, part of the list, ascending, descending), reverse(all, part of the list), seach, delete by conditions, find max, min, edit node’s content,...
+Binary Search Tree: insert, search, calculate height, balance factor, count nodes (all, subtree), delete by copying, node rotation, simple balancing, find max, min (all, subtree), edit node’s content,...
+Graph: Traversals (all, by conditions), check connectivity, calculate degrees, Dijkstra’s shortest path algorithm, Euler’s cycle,...
+
+Important notice for output and the way of writing the program:
+- Marking is done based on the output, however data will be replaced with new one. Thus you should write program based on question’s requirements, not on sample output.
+- In the ouput used for marking, the leading and trailing spaces are not important, space is important but number of spaces are not, new line is important but number of empty lines is not, case of letters is important.
+
+INSTRUCTIONS
+Please read the instructions carefully before answering the questions. Do not start until you are told to do so.
+* Students are allowed to use any books and materials.
+* Students are NOT allowed to use mobile phone, Internet, Intranet, Yahoo Messenger, CMS, USB, and all applications that help share information.
+* Students are NOT allowed to transmit information and exchange materials with any other during the examination period.
+Beside the above conditions, students must follow the following requirements:
+1. Fill in the exam paper with your information (name, roll number, Room No and Class).
+2. Down load  the compressed file \\fstu\Khao_Thi\03_Exam_Online\CSD201_for_student.zip  to your computer and decompress it.
+3. Create the folder with the name format RollNo_Name_CSD201_CLASS (1), e.g. 01245_LongNT_CSD201_SE0515.
+4. Create 2 projects named Q1 and Q2. Copy all files in  the "Q1 for students" folder to the src folder in Q1, then copy data.txt to the Q1 folder. Do the same for the project Q2. 
+5. On completion, copy Q1 and Q2 to (1), then compress (1) in ZIP or RAR format and copy  the compressed file to:
+\\fstu\Khao_Thi\04_Nop_Bai_Thi\CSD201_18.03\ROOM <Your room> 
+Ex: if you’re in Room 204 => copy your compressed file to 
+\\fstu\Khao_Thi\04_Nop_bai_thi\CSD201_18.03\ROOM204
+6. Submitt the exam papers to the proctor.
+7. The version of   Java being used must be  1.7 or 1.8.
+If at least one of the above requirements is not followed, the exam will get ZERO.
+
+How will your PE be marked?
+(1) If  at least one of the above requirements is not followed, the exam will get 0.
+(2) If  the source file is not compiled -> mark for that file will be 0.
+(3)  Wrong output -> that test case  will get 0 (data will be replaced when marking).
+(4) If your code does not satisfy the question's requirements, the mark for that code  will be 0.   
+
+
+Question 1: (4 marks)
+In this question you should complete some methods in MyList.java file. 
+The class Car with 2 data members: owner and price is given and you do not need to edit it. The MyList class is a linked list of  Car objects.  The following methods should be completed:
+
+* void addLast(String xOwner, int xPrice) - check if xOwner.charAt(0) = 'B' or xPrice>100 then do nothing, otherwise add new car with owner=xOwner, price=xPrice, price=xPrice to the end of the list. (price can get arbitrary value, even negative).
+      
+* void f1() – This method is used to test the addLast methode above. You do not need to edit this function. Output in the file f1.txt must be the following:
+(A,9) (C,7) (D,2) (E,6) (F,4)
+
+* void f2() – There is a  given objects  x. You should write statements so that x  will be the first element of  the  list. Output in the file f2.txt must be the following:
+(C,9) (D,6) (E,8) (F,2) (I,6) 
+(X,1) (C,9) (D,6) (E,8) (F,2) (I,6)
+
+* void f3() – Suppose the list contains at least 3 elements. Delete the first node having price<5. Output in the file f3.txt must be the following:
+(C,9) (D,6) (E,3) (F,2) (I,6) 
+(C,9) (D,6) (F,2) (I,6)
+
+* void f4() – Sort the list ascendingly by price. Output in the file f4.txt must be the following:
+(C,9) (D,6) (E,5) (F,13) (I,2) (J,1) 
+(J,1) (I,2) (E,5) (D,6) (C,9) (F,13)
+
+Question 2: (6 marks)
+In this question you should complete some methods in (1) BSTree.java and (2) Graph.java files. 
+(1) The class Car with 2 data members: owner and price is given and you do not need to edit it. The BSTree class is a binary search tree of  Car objects. The variable price is the key of the tree. The following methods should be completed:
+ 
+* void insert(string xOwner, int xPrice) - check if xOwner.charAt(0) = 'B' or xPrice>100   then do nothing, otherwise insert new car with owner=xOwner, price=xPrice to the tree. 
+
+* void f1() – You do not need to edit this function. Your task is to complete the insert(...) function above only. Output in the file f1.txt must be the following:
+(A,5) (C,2) (E,4) (G,3) (D,6) (F,7) 
+(C,2) (G,3) (E,4) (A,5) (D,6) (F,7)
+
+* void f2() – Perform pre-order traversal from the root but display to file f2.txt nodes having price in the interval [3,5] only. Hint: Copy the function preOrder(...)  to preOrder2(...) and modify it. Output in the file f2.txt must be the following:
+(C,6) (D,2) (F,4) (H,3) (I,5) (E,8) (G,7) 
+(F,4) (H,3) (I,5)
+
+* void f3() – Perform breadth-first traversal from the root and delete by copying the first node having both 2 sons and price < 7. Output in the file f3.txt must be the following:
+(C,8) (D,6) (E,9) (F,2) (G,7) (H,1) (I,3) (J,5) (K,4) 
+(C,8) (J,5) (E,9) (F,2) (G,7) (H,1) (I,3) (K,4)
+
+* void f4() – Perform breadth-first traversal from the root and find the first node p having left son and price < 7. Rotate p to right about its’ left son. Output in the file f4.txt must be the following:
+(C,8) (D,6) (E,9) (F,2) (G,7) (H,1) (I,3) (J,5) (K,4) 
+(C,8) (F,2) (E,9) (H,1) (D,6) (I,3) (G,7) (J,5) (K,4)
+
+ (2) The class Graph is the implementation of a graph. The following methods should be completed: 
+* void f5() – Apply the Dijkstra’s shortest path algorithm to find the shortest path from the vertex 0 (A) to the vertex 4 (E). (Note that in the weighted matrix, the value 999 is considered as infinity). Write 2 lines into the file f5.txt. The first line contains the list of vertices in the shortest path. The second lines contains shortest distances to the vertices in the first line. Content of  the output file f5.txt must be:
+A   C   F   E
+0   9   11   20
+
+* void f6() – Supposed the given graph has Euler's cycle. Apply the pseudocode in the Graph.java file to write statements to find the Euler's cycle from the vertex 1 (B). Output in the file f6.txt must be the following:
+B  D  E  D  C  B  E  G  F  A  B  
+
