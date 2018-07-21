@@ -6,3 +6,7 @@
 
 //format date
 	String timeStamp = new SimpleDateFormat("ss/mm/HH").format(Calendar.getInstance().getTime());
+	//specially
+	Calendar cal = Calendar.getInstance();
+    SimpleDateFormat sdf = new SimpleDateFormat("YYYY:DD:MM:hh:mm:ss");
+    String time = sdf.format(cal.getTime());// year:day:month:hour:minute:second

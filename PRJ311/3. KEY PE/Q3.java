@@ -130,6 +130,20 @@
         }
     }
 	
+//pop up messages
+	JOptionPane.showMessageDialog( null, "Success");
+	
+//when date null
+	Date date = rs.getDate(4);
+    if (date == null) {
+        s = "Null";
+    } else {
+        s = new SimpleDateFormat("dd-MM-yyyy").format(rs.getDate(4));
+    }
+
+//disable key default
+	txtArea.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_H, KeyEvent.CTRL_MASK), "none");
+
 //add item to combobox
 	public void addItemCombobox() {
         try {
@@ -167,21 +181,24 @@
             ex.printStackTrace();
         }
     }
+
+//init properties
+    public void initProperties(ResultSet rs) {
+        try {
+            ResultSetMetaData rsmd = rs.getMetaData();
+            int numberColum = rsmd.getColumnCount();
+
+            for (int i = 1; i <= numberColum; i++) {
+                String name = rsmd.getColumnName(i);
+                demo.getCbProperties().addItem(name);
+            }
+        } catch (Exception e) {
+        }
+    }
 	
 //change info when user click row
     public void changeInfoClickRowInTable(){
         int currentRout = jTable1.getSelectedRow();
         String battle = jTable1.getValueAt(currentRout , 1).toString();
 	}
-	
-//pop up messages
-	JOptionPane.showMessageDialog( null, "Success");
-	
-//when date null
-	Date date = rs.getDate(4);
-    if (date == null) {
-        s = "Null";
-    } else {
-        s = new SimpleDateFormat("dd-MM-yyyy").format(rs.getDate(4));
-    }
 

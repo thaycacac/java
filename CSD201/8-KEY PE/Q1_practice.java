@@ -38,7 +38,7 @@
  ||___SWAP______//swap min max
  ||     ||______//swap node max second with node min first
  ||
- ||___GET_______////get node at index k
+ ||___GET_______//get node at index k
  ||    ||_______//get node max
  ||
  ||___ORTHER____//traverse
