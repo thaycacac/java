@@ -177,7 +177,7 @@
             while (rs.next()) {
                 tfNewResult.setText(rs.getString(1));
             }
-        } catch (SQLException ex) {
+        } catch (SQLException ex) {	
             ex.printStackTrace();
         }
     }

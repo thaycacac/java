@@ -93,7 +93,7 @@
         String fontName = cbbFontName.getSelectedItem().toString();
         int style = lbText.getFont().getStyle();
         int size = lbText.getFont().getSize();
-        lbText.setFont(new Font(fontName, fontSize, fontSize));
+        lbText.setFont(new Font(fontName, style, size));
     }
 
 /*change font style
@@ -106,7 +106,7 @@
         int style = cbbFontStyle.getSelectedItem().toString();
         int name = lbText.getFont().getName();
         int size = lbText.getFont().getSize();
-        lbText.setFont(new Font(fontName, fontSize, fontSize));
+        lbText.setFont(new Font(fontName, style, size));
     }
 
 //change font name
@@ -114,7 +114,7 @@ private void changeFontStyleByComboBox() {
         int style = cbbFontStyle.getSelectedItem().toString();
         int name = lbText.getFont().getName();
         int size = lbText.getFont().getSize();
-        lbText.setFont(new Font(fontName, fontSize, fontSize));
+        lbText.setFont(new Font(fontName, style, size));
     }
 
 //change font size
@@ -122,7 +122,7 @@ private void changeFontStyleByComboBox() {
         int size = cbbFontSize.getSelectedItem().toString();
         int style = lbText.getFont().getStyle();
         int name = lbText.getFont().getName();
-        lbText.setFont(new Font(fontName, fontSize, fontSize));
+        lbText.setFont(new Font(fontName, style, size));
     }
 
 //simple format
