@@ -1,0 +1,33 @@
+
+LAB221 AssignmentType:Short AssignmentCode:J2.S.P0113LOC:70Slot(s):2
+Title
+	Manage book
+Background Context
+       NA
+       
+Program Specifications
+Use swing library to create a program to manage books, basic information includes:
+- Book code
+- Book name
+- Author
+- Publisher
+- Publish year
+- For rent
+Main functions described as below:
+ 
+Function details:
+
+1. Create new book
+2. Update an existing book
+3. Remove an existing book
+4. Display an existing book information
+Expectation of User interface:
+The screen should be as:
+
+
+
+- Enter book information in controls on the form, click Save button, book information is stored and new item added in the Book list
+- Select one item in the Book list, book information displays on the screen, click Remove button, the item is removed from the Book list and the first item information in the Book list will be displayed.
+- Click Exit button, the program is finish
+
+Guidelines
