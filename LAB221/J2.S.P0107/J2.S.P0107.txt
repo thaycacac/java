@@ -1,0 +1,22 @@
+
+LAB221 AssignmentType:Short AssignmentCode:J2.S.P0107LOC:10Slot(s):1
+Title
+	Use progress bar in program
+Background Context
+       A progress bar can be used to show a user how far along he/she is in a process.
+       
+Program Specifications
+Create a program to use JProgressBar.
+ 
+Function details:
+	NA
+
+Expectation of User interface:
+The screen when the program startup should be as:
+
+
+
+
+
+
+Guidelines
