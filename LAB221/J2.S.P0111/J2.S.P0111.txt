@@ -1,0 +1,21 @@
+
+LAB221 AssignmentType:Short AssignmentCode:J2.S.P0111LOC:150Slot(s):2
+Title
+	Create calculator
+Background Context
+       NA
+       
+Program Specifications
+- Use swing library to create a program to simulate calculator with basic functions: add, subtract, divide, multiple, square.
+
+ 
+Function details:
+
+NA
+Expectation of User interface:
+The screen should be as:
+
+
+
+
+Guidelines
