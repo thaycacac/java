@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${libs.jaxws21.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsimport-client-sumService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/sumService"/>
+        <property name="wsdl-sumService" location="xml-resources/web-service-references/sumService/wsdl/localhost_8080/Web_service/sumService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/sumService" destdir="${build.generated.dir}/jax-wsCache/sumService" wsdl="${wsdl-sumService}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/Web_service/sumService?wsdl" xnocompile="true" xendorsed="true" package="services">
+            <depends file="${wsdl-sumService}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/sumService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/sumService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-sumService" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/sumService"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/services"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-sumService"/>
+</project>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<root>
+    <book>
+        <author>HoaPN</author>
+        <title>Hello</title>
+        <page>123</page>
+    </book>
+    <book>
+        <author>CuongNX</author>
+        <title>Hi</title>
+        <page>234</page>
+    </book>
+</root>

@@ -1,0 +1,86 @@
+.myTitle {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.mySpan {
+    font-weight: bold;
+}
+
+.myTable {
+    margin: 0 auto;
+    display: flex;
+}
+.myTableField {
+    text-transform: uppercase;
+    margin: 0 auto;
+    display: flex;
+}
+.myItemField {
+    background: #6b90da;
+    margin: 1px;
+    color: black;
+    height: 30px;
+    text-align: left;
+    line-height: 30px;
+    width: 1000px;
+}
+.myItem {
+    margin: 1px;
+    font-size: 16px;
+    text-align: left;
+    width: 1000px;
+}
+.myCode {
+    color: #5c58f1;
+}
+.Absent {
+    color: red;
+}
+.Present{
+    color: green;
+}
+.container {
+    width: 95%;
+    margin: 0 auto;
+}
+a:link {
+    color: blue;
+    text-decoration: none;
+}
+.button {
+    text-align: center;
+}
+.myButton {
+    background-color: #6b90da;
+    border: none;
+    height: 25px;
+    width: 50px;
+    color: white;
+}
+
+/*REGISTER*/
+.containerRegister {
+  width: 50%;
+  margin: 0 auto; 
+  background-color: aqua;
+}
+
+.myInput {
+  height: 25px;
+  width: 250px;
+  border-radius: 5px;
+}
+.myForm {
+  font-size: 20px;
+}
+.myButton {
+  height: 30px;
+  background-color: blue;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  width: 100px;
+}
+
+/*LOGIN*/
