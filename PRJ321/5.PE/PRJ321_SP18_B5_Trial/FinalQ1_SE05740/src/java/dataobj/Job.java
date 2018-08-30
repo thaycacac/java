@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package dataobj;
 
 /**
@@ -5,20 +10,19 @@ package dataobj;
  * @author Thaycacac
  */
 public class Job {
-
     private int id;
     private String title;
-    private String companyCode;
+    private String com;
     private int exp;
     private String des;
 
     public Job() {
     }
 
-    public Job(int id, String title, String companyCode, int exp, String des) {
+    public Job(int id, String title, String com, int exp, String des) {
         this.id = id;
         this.title = title;
-        this.companyCode = companyCode;
+        this.com = com;
         this.exp = exp;
         this.des = des;
     }
@@ -39,12 +43,12 @@ public class Job {
         this.title = title;
     }
 
-    public String getCompanyCode() {
-        return companyCode;
+    public String getCom() {
+        return com;
     }
 
-    public void setCompanyCode(String companyCode) {
-        this.companyCode = companyCode;
+    public void setCom(String com) {
+        this.com = com;
     }
 
     public int getExp() {
@@ -62,5 +66,5 @@ public class Job {
     public void setDes(String des) {
         this.des = des;
     }
-
+    
 }

@@ -1,60 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
-        <servlet-name>AddJobServlet</servlet-name>
-        <servlet-class>servlet.AddJobServlet</servlet-class>
+        <servlet-name>AddJob</servlet-name>
+        <servlet-class>servlet.AddJob</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ListJobServlet</servlet-name>
-        <servlet-class>servlet.ListJobServlet</servlet-class>
+        <servlet-name>AddGroup</servlet-name>
+        <servlet-class>servlet.AddCompany</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ListCompanyServlet</servlet-name>
-        <servlet-class>servlet.ListCompanyServlet</servlet-class>
+        <servlet-name>EditJob</servlet-name>
+        <servlet-class>servlet.EditJob</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>AddCompanyServlet</servlet-name>
-        <servlet-class>servlet.AddCompanyServlet</servlet-class>
+        <servlet-name>DeleteJob</servlet-name>
+        <servlet-class>servlet.DeleteJob</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>DeleteJobServlet</servlet-name>
-        <servlet-class>servlet.DeleteJobServlet</servlet-class>
+        <servlet-name>ReListJob</servlet-name>
+        <servlet-class>servlet.ReListJob</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>EditJobServlet</servlet-name>
-        <servlet-class>servlet.EditJobServlet</servlet-class>
+        <servlet-name>ReAddJob</servlet-name>
+        <servlet-class>servlet.ReAddJob</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>UpdateJobServlet</servlet-name>
-        <servlet-class>servlet.UpdateJobServlet</servlet-class>
+        <servlet-name>ReListCompany</servlet-name>
+        <servlet-class>servlet.ReListCompany</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReAddCompany</servlet-name>
+        <servlet-class>servlet.ReAddCompany</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>AddJobServlet</servlet-name>
-        <url-pattern>/AddJobServlet</url-pattern>
+        <servlet-name>AddJob</servlet-name>
+        <url-pattern>/AddJob</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ListJobServlet</servlet-name>
-        <url-pattern>/ListJobServlet</url-pattern>
+        <servlet-name>AddGroup</servlet-name>
+        <url-pattern>/AddCompany</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ListCompanyServlet</servlet-name>
-        <url-pattern>/ListCompanyServlet</url-pattern>
+        <servlet-name>EditJob</servlet-name>
+        <url-pattern>/EditJob</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>AddCompanyServlet</servlet-name>
-        <url-pattern>/AddCompanyServlet</url-pattern>
+        <servlet-name>DeleteJob</servlet-name>
+        <url-pattern>/DeleteJob</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>DeleteJobServlet</servlet-name>
-        <url-pattern>/delete/*</url-pattern>
+        <servlet-name>ReListJob</servlet-name>
+        <url-pattern>/ReListJob</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>EditJobServlet</servlet-name>
-        <url-pattern>/edit/*</url-pattern>
+        <servlet-name>ReAddJob</servlet-name>
+        <url-pattern>/ReAddJob</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>UpdateJobServlet</servlet-name>
-        <url-pattern>/UpdateJobServlet</url-pattern>
+        <servlet-name>ReListCompany</servlet-name>
+        <url-pattern>/ReListCompany</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReAddCompany</servlet-name>
+        <url-pattern>/ReAddCompany</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -62,6 +70,6 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>AddJob.jsp</welcome-file>
-    </welcome-file-list>
+    <welcome-file>AddJob.jsp</welcome-file>
+</welcome-file-list>
 </web-app>

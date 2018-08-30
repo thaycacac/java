@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package dal;
 
 import dataobj.Job;
@@ -15,32 +20,30 @@ import java.util.ArrayList;
  */
 public class JobDAO {
 
-    public void insertJob(String name, String code, int exp, String des) {
+    public void insert(String title, String com, int exp, String des) {
         Connection con = null;
         DBContext db = new DBContext();
         try {
             con = db.getConnection();
-            String sql = "INSERT INTO Job (JobTitle, CompanyCode,"
-                    + "YearExp, Description) VALUES (?, ?, ?, ?)";
-            PreparedStatement stmt = con.prepareStatement(sql);
-            stmt.setString(1, name);
-            stmt.setString(2, code);
-            stmt.setInt(3, exp);
-            stmt.setString(4, des);
-            stmt.executeUpdate();
-            stmt.close();
+            String sql = "INSERT INTO Job (JobTitle, CompanyCode, YearExp, Description) VALUES (?, ?, ?, ?)";
+            PreparedStatement s = con.prepareStatement(sql);
+            s.setString(1, title);
+            s.setString(2, com);
+            s.setInt(3, exp);
+            s.setString(4, des);
+            s.executeUpdate();
+            s.close();
             con.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
 
-    public ArrayList<Job> selectJob() {
-        ArrayList<Job> listJob = new ArrayList<>();
-        Connection con = null;
+    public ArrayList<Job> select() {
+        ArrayList<Job> listj = new ArrayList<>();
+Connection con = null;
         DBContext db = new DBContext();
+        CompanyDAO comd = new CompanyDAO();
         try {
             con = db.getConnection();
             Statement stmt = con.createStatement();
@@ -48,90 +51,79 @@ public class JobDAO {
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
                 int id = rs.getInt(1);
-                String name = rs.getString(2);
-                String code = rs.getString(3);
-                int exp = rs.getInt(4);
-                String des = rs.getString(5);
-                Job job = new Job(id, name, code, exp, des);
-                listJob.add(job);
+                String title = rs.getString(2);
+                String com = rs.getString(3);
+                
+                String nameCom = comd.getname(com);
+                int exp =rs.getInt(4);
+                String des =rs.getString(5);
+                Job j = new Job(id, title, nameCom, exp, des);
+                listj.add(j);
             }
             rs.close();
             stmt.close();
             con.close();
-            return listJob;
-        } catch (SQLException ex) {
-            ex.printStackTrace();
+            return listj;
         } catch (Exception ex) {
             ex.printStackTrace();
         }
         return null;
     }
 
-    public void updateJob(int id, String name, String code, int exp, String des) {
-        Connection con = null;
+    public void delete(int id) {
+Connection con = null;
         DBContext db = new DBContext();
         try {
             con = db.getConnection();
-            String sql = "UPDATE Job SET JobTitle = ?, CompanyCode = ?,"
-                    + "YearExp = ?, Description = ? WHERE id = ?";
+            String sql = "DELETE FROM Job WHERE id = "+id;
             PreparedStatement stmt = con.prepareStatement(sql);
-            stmt.setString(1, name);
-            stmt.setString(2, code);
-            stmt.setInt(3, exp);
-            stmt.setString(4, des);
-            stmt.setInt(5, id);
             stmt.executeUpdate();
             stmt.close();
             con.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-    }
-
-    public void deleteJob(int id) {
-        Connection con = null;
-        DBContext db = new DBContext();
-        try {
-            con = db.getConnection();
-            String sql = "DELETE FROM Job WHERE id = ?";
-            PreparedStatement stmt = con.prepareStatement(sql);
-            stmt.setInt(1, id);
-            stmt.executeUpdate();
-            stmt.close();
-            con.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
         return;
     }
 
-    public Job selectJobById(int id) {
-        ArrayList<Job> listJob = new ArrayList<>();
+    public void update(int id, String title, String com, int exp, String des) {
+Connection con = null;
+        DBContext db = new DBContext();
+        try {
+            con = db.getConnection();
+            String sql = "UPDATE Job SET JobTitle = ?, CompanyCode = ?, YearExp = ?, Description = ? WHERE id = " +id;
+            PreparedStatement s = con.prepareStatement(sql);
+            s.setString(1, title);
+            s.setString(2, com);
+            s.setInt(3, exp);
+            s.setString(4, des);
+            s.executeUpdate();
+            s.close();
+            con.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+    public Job getJob(String id){
         Connection con = null;
         DBContext db = new DBContext();
         try {
             con = db.getConnection();
             Statement stmt = con.createStatement();
-            String sql = "SELECT * FROM Job WHERE id = " + id;
+            String sql = "SELECT * FROM Job where id = " +id;
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
-                int idEdit = rs.getInt(1);
-                String name = rs.getString(2);
-                String code = rs.getString(3);
-                int exp = rs.getInt(4);
-                String des = rs.getString(5);
-                Job job = new Job(idEdit, name, code, exp, des);
-                return job;
+                int idt = rs.getInt(1);
+                String title = rs.getString(2);
+                String com = rs.getString(3);
+                int exp =rs.getInt(4);
+                String des =rs.getString(5);
+                Job j = new Job(idt, title, com, exp, des);
+return j;
             }
             rs.close();
             stmt.close();
             con.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
