@@ -62,7 +62,7 @@ public class HandleButton {
     // check user win or not
     public boolean isWin(HashMap<Integer, JButton> listButton) {
         for (Map.Entry<Integer, JButton> entry : listButton.entrySet()) {
-            Integer key = entry.getKey();
+            Integer key = entry.getKey() + 1;
             JButton value = entry.getValue();
             String text = value.getText();
             if (!text.equals("")) {

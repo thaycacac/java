@@ -18,7 +18,7 @@ public class Main {
         Thread elapse = control.initThread(game);
         elapse.start();
         // add acction button
-        control.addActionButton(game, listButton);
+        control.addActionButton(game, listButton, elapse);
         // create game
         control.createGame(game, listButton);
     }
