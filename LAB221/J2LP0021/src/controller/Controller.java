@@ -117,7 +117,7 @@ public class Controller {
         }
         listSuffle.add(0);
         Random ran = new Random();
-        for (int i = 0; i < Math.pow(size, 3); i++) {
+        for (int i = 0; i < 4; i++) {
             switch (ran.nextInt(4)) {
                 case 0:
                     swapListShuffle(listSuffle, size, size);
