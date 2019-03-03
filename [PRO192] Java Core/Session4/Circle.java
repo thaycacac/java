@@ -1,5 +1,6 @@
 
-public class Circle extends Shape {//lớp cha abtract hoặc lớp con abtract hoặc lớp con sẽ phải ghi đè định nghĩa phương thức trừu tượng của cha
+public class Circle extends Shape {
+    // Lớp cha abtract hoặc lớp con abtract hoặc lớp con sẽ phải ghi đè định nghĩa phương thức trừu tượng của cha
 
     private double radius;
 

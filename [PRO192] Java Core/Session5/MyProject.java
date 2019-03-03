@@ -5,8 +5,6 @@ import java.util.Comparator;
 import java.util.List;
 
 public class MyProject implements IProject {
-//A list of project
-
     //private Project[] projects;
     private List<Project> projects;//a list project
 

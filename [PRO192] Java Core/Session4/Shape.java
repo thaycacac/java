@@ -1,4 +1,5 @@
-public abstract class Shape {//có phương thức abtract thì lớp thành lớp abtract
+public abstract class Shape {
+    // Có phương thức abtract thì lớp thành lớp abtract
     private  String bgColor;
 
     public Shape() {
@@ -12,5 +13,6 @@ public abstract class Shape {//có phương thức abtract thì lớp thành l�
         return bgColor;
     }
  
-    public abstract double getArea();//thời điểm viết k đủ dữ liệu để viết
+    public abstract double getArea();
+    // Thời điểm viết k đủ dữ liệu để viết
 }

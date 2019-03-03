@@ -3,11 +3,10 @@ public class Project implements Comparable<Project> {
 
     @Override
     public int compareTo(Project o) {
-//        if(this.started > o.started) return -1;
-//        else if(this.started==o.started) return 0;
-//        else return 1;
-
-        return o.started - this.started;//descending -123
+    //    if(this.started > o.started) return -1;
+    //    else if(this.started==o.started) return 0;
+    //    else return 1;
+        return o.started - this.started;// Descending -123
     }
 
     private String name, sponsor;

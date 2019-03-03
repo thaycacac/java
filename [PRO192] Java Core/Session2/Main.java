@@ -5,9 +5,9 @@ public class Main {
 
     public static void main(String[] args) {
         Student s1, s2;
-        //Xây nhà từ bản thiết kế
-        s1 = new Student(); //tạo vùng bộ nhớ cho student
-        s1.name = "Mo"; //sử dụng khi chưa để private
+        // Khởi tạo ra một học sinh
+        s1 = new Student(); // Tạo vùng bộ nhớ cho student
+        s1.name = "Mo"; // Sử dụng khi chưa để private
         s1.semester = 2;
 
         s1.intro();
@@ -30,11 +30,12 @@ public class Main {
             System.out.print("Enter student semster: ");
             students[i].semester = Integer.valueOf(in.nextLine());
         }
-        //1. cho k là số kỳ học nhập từ bàn phím. in ra tất cả sinh viên có kỳ học bằng k
+
+        //Bài tập: cho k là số kỳ học nhập từ bàn phím. in ra tất cả sinh viên có kỳ học bằng k
         int k;
         System.out.println("Enter k = ");
         k = in.nextInt();
-        for (Student x : students) {//với mỗi sinh viên x nằm trong nhóm sinh viên đã có
+        for (Student x : students) { // Với mỗi sinh viên x nằm trong nhóm sinh viên đã có
             if (x.semester == k) {
                 x.intro();
             }

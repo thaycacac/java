@@ -1,11 +1,12 @@
 
 public class Student {
 
-    //data
+    // Data
     private String name;
     private int semester;
     private boolean active;
-    //method
+
+    // Method
     void login() {
 
     }
@@ -14,39 +15,31 @@ public class Student {
         System.out.printf("%-20s%-10d\n", name, semester);
     }
 
-    //contructor = ctor
-    // name == name of class
-    // not return
-//    Student(String x, int y){
-//        name = x;
-//        semester = y;
-//    }
     public Student(String name, int semester) {
         this.name = name;
         this.semester = semester;
     }
 
-    //Tên giống nhau nhưng java hiểu là khác nhau - overload methods => tính đa hình
+    // Tên giống nhau nhưng java hiểu là khác nhau - overload methods => tính đa hình
     public Student() {
         name = "";
         semester = 1;
     }
 
-    //add method
-    //mutator/getter
+    // Mutator/getter
     public String getName() {
         return name;
     }
-    //trường hợp đặc biệt thay get bằng is nếu trả về boolean
+    // Thay get bằng is nếu trả về boolean
     public boolean isActive(){
         return active;
     }
 
-    //accessor/setter
+    // Accessor/setter
     public void setName(String name) {
         this.name = name;
     }
-    //auto add getter setter
+    // Auto add getter setter
     public int getSemester() {
         return semester;
     }

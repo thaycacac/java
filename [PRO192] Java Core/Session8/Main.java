@@ -30,20 +30,20 @@ public class Main {
         }
         System.out.println("Thanks you, your mark is " + mark);
 
-//        try {
-//            int[] a = new int[3];
-//            a[3] = 3;
-//            int b = 1;
-//            a[1] = a[0] / --b;
-//        } catch (ArithmeticException ex) {
-//            System.out.println(ex.getMessage());
-//        } catch (ArrayIndexOutOfBoundsException ex) {
-//            System.out.println("Array index is invalid");
-//        } catch (Exception ex) {
-//            System.out.println(ex);
-//        } finally {
-//            //clean-up
-//        }
-//        System.out.println("End of program");
+       try {
+           int[] a = new int[3];
+           a[3] = 3;
+           int b = 1;
+           a[1] = a[0] / --b;
+       } catch (ArithmeticException ex) {
+           System.out.println(ex.getMessage());
+       } catch (ArrayIndexOutOfBoundsException ex) {
+           System.out.println("Array index is invalid");
+       } catch (Exception ex) {
+           System.out.println(ex);
+       } finally {
+           //clean-up
+       }
+       System.out.println("End of program");
     }
 }
