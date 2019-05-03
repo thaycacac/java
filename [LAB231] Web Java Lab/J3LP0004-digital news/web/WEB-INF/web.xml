@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>controller.Home</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Home</servlet-name>
+        <servlet-class>controller.Home</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Search</servlet-name>
+        <servlet-class>controller.Search</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Article</servlet-name>
+        <servlet-class>controller.ArticleController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ArticleController</servlet-name>
+        <servlet-class>controller.ArticleController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewArticle</servlet-name>
+        <servlet-class>controller.ViewArticle</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Home</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Search</servlet-name>
+        <url-pattern>/Search</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ArticleController</servlet-name>
+        <url-pattern>/Article</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewArticle</servlet-name>
+        <url-pattern>/viewarticle</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
+<!--Tomcat
+<Context path="/J3.L.P0013">
+    <Environment name="severName" type="java.lang.String" value="DESKTOP-7IGOK4E"/>
+    <Environment name="port" type="java.lang.String" value="1433"/>
+    <Environment name="username" type="java.lang.String" value="sa"/>
+    <Environment name="password" type="java.lang.String" value="123456"/>
+    <Environment name="dbName" type="java.lang.String" value="J3.L.P0013"/>
+    <Environment name="imgFolder" type="java.lang.String" value="image/"/>
+</Context>-->

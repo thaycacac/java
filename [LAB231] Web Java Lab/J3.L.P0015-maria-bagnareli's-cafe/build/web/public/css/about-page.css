@@ -1,0 +1,9 @@
+.image-about {
+    width: 220px;
+    height: 160px;
+    border-radius: 10px;
+}
+
+.page-current {
+    color: red;
+}
