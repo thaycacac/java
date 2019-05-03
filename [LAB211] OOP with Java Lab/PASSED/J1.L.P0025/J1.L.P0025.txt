@@ -1,0 +1,39 @@
+
+LAB211 AssignmentType:Long AssignmentCode:J1.S.P0025LOC:450Slot(s):5
+Title 
+Create a Java console program to normalize text.
+Background Context
+N/A
+       
+Program Specifications
+The program provides shop owners tools to run their business effectively. The program’s functions as below:
+
+Function details:
+The program read text file (input.txt) and normalize text and sentences. After that write normalized document to the output file (output.txt).
+- Only one space between words.
+- Only one space after comma (,), dot (.) and colon (:). First character of word after dot is in Uppercase and other words are in lower case.
+- There are no spaces before and after sentence or word phrases in quotes (“”).
+- First character of word in first line is in Uppercase.
+- There are no blank line between lines
+- There are no space between comma or dot and word in front of it. 
+- Must have dot at the end of text.
+The program have to use Exception to handle exception when read or write (file not found, cannot read or write exception, etc.
+Example as below:
+Document before normalizing:
+as you can see, detecting whether a string is normalized can be quite efficient. A lot of the cost of normalizing in the “second row” is for the initialization of buffers. The cost of which is amortized when one is processing larger strings.
+ As it turns out, these buffers are rarely needed, so we may change the implementation at some point to speed up the common case for small strings even further
+Document after normalizing:
+“As you can see, detecting whether a string is normalized can be quite efficient. A lot of the cost of normalizing in the “second row” is for the initialization of buffers, the cost of which is amortized when one is processing larger strings. As it turns out, these buffers are rarely needed, so we may change the implementation at some point to speed up the common case for small strings even further.
+
+Technical Requirements
+1. Using Object-Oriented programming style.
+2. Use only core Java functions and classes.
+
+Guidelines
+
+SlotTaskDescription1- Design Code
+- Read text file- Should use BufferReader, StringBuffer…2- Normalize content file- Only one space between words.
+- Only one space after comma (,), dot (.) and colon (:). First character of word after dot is in Uppercase and other words are in lower case3- Normalize content file- There are no spaces before and after sentence or word phrases in quotes (“”).
+- First character of word in first line is in Uppercase.4- Normalize content file- There are no space between comma or dot and word in front of it. 
+- Must have dot at the end of text.
+- Write result to output file5- Review program
