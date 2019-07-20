@@ -1,0 +1,52 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 7, 2019, 9:49:54 PM
+    Author     : DELL
+*/
+.content-right{
+    order: 1;
+    width: 30%;
+    height: 100%;
+}
+
+.content-right .container{
+    border: 1px solid #fff;
+    margin-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 8px #535353;
+}
+
+.container a{
+    display: block;
+    color: black;
+}
+
+.container a:hover{
+    color: red;
+}
+
+.container .fb::before{
+    content: url('../image/fbicon.jpg');
+    margin-right: 5px;
+}
+
+.container .twiter::before{
+    content: url('../image/twitericon.jpg');
+    margin-right: 5px;
+}
+
+.container .google::before{
+    content: url('../image/ggicon.jpg');
+    margin-right: 5px;
+}
+
+.container h4{
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
