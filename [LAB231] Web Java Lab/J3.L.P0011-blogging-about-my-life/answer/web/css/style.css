@@ -1,0 +1,396 @@
+body{
+    background-color: #DCD8D0;
+    padding-top: 0;
+    margin-top: 0;
+    font-family: sans-serif;
+    min-width: 546px;
+}
+
+.wrap{
+    width: 70%;
+    margin: 0 auto;
+    box-shadow:  0 0 30px #535353;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.header{
+    background-color: #EDEAE1;
+    padding: 25px 15px;
+}
+
+.header h3{
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 30px;
+    color: #6A4B5B;
+    font-weight: 800;
+}
+
+.header span{
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 5px;
+    color: #6A4B5B;
+    font-size:inherit;
+}
+
+.menu{
+    background-color: #EDEAE1;
+    padding: 5px 5px;
+}
+
+.menu a{
+    color: black;
+    text-decoration: none;
+    margin-left: 5px;
+    margin-right: 15px;
+}
+
+.content{
+    padding: 20px 2%;
+    background-color: #fff;
+    height: auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    /*overflow: auto;*/
+}
+
+.main-content{
+    display: flex;
+}
+
+.content-left{
+    order: 1;
+    padding-right: 2%;
+    width: 75%;
+    height: 100%;
+}
+
+.content-left > span{
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+.content-right{
+    order: 2;
+    display: inline-block;
+    width: 25%;
+    height: 100%;
+    margin-bottom: 20px;
+    background-color: activeborder;
+}
+
+.footer{
+    width: 100%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    background: #fff;
+    border-top: 1px solid #DDDDDD;
+}
+.footer a{
+    float: left;
+}
+.footer span{
+    float: right;
+}
+
+.content-right .container{
+    border: 1px solid #fff;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 8px #535353;
+}
+
+.container a{
+    display: block;
+    color: black;
+}
+
+.container a:hover{
+    color: black;
+}
+
+.container .fb::before{
+    content: url('../image/fbicon.jpg');
+    margin-right: 5px;
+}
+
+.container .twiter::before{
+    content: url('../image/twitericon.jpg');
+    margin-right: 5px;
+}
+
+.container .google::before{
+    content: url('../image/ggicon.jpg');
+    margin-right: 5px;
+}
+
+.container h4{
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.menu-container{
+    clear: both;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+    line-height: 40px;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.menu-container .title{
+    order: 1;
+    width: 70%;
+}
+
+.menu-container .title a{
+    color: black;
+    text-decoration: underline;
+}
+
+.menu-container .date{
+    order: 4;
+    width: 30%;
+    text-align: right;
+}
+
+.header-table{
+    line-height: 40px;
+    border-bottom: 1px solid #DDDDDD;
+    border-top: 1px solid #DDDDDD;
+    overflow: auto;
+}
+
+.header-table h3{
+    float: left;
+    font-weight: lighter;
+    line-height: 0;
+    text-transform: uppercase;
+    font-size: 17px;
+    margin-top: 21px;
+}
+
+.float-right{
+    float: right;
+    margin-right: 5px;
+}
+
+.paging{
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.setBold{
+    font-weight: bold;
+}
+
+/*===================*/
+
+.post{
+    font-family: initial;
+    margin-top: 20px;
+    overflow: auto;
+}
+
+.icon-post-note{
+    float: left;
+    width: 37px;
+    height: 37px;
+    background: url('../image/note.png') no-repeat;
+}
+
+.icon-post-pen{
+    float: left;
+    width: 37px;
+    height: 37px;
+    background: url('../image/pen.png') no-repeat;
+}
+
+.icon-post-camera{
+    float: left;
+    width: 37px;
+    height: 37px;
+    background: url('../image/camera.png') no-repeat;
+}
+
+.content-post{
+    float: right;
+    width: 90%;
+}
+
+.title-post{
+    margin-bottom: 25px;
+}
+
+.title-post a{
+    float: left;
+    color: black;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.title-post span{
+    float: right;
+    font-style: oblique;
+    margin-right: 5px;
+}
+
+.title-details{
+    text-decoration: none;
+}
+
+.content-contact{
+    margin-bottom: 20px;
+    overflow: auto;
+}
+
+.content-contact h3{
+    font-size: 20px;
+}
+
+.content-contact span{
+    font-size: 15px;
+}
+
+.border-contact{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border-bottom: 1px dashed gray;
+}
+
+/*=======*/
+.camera{
+    width: 100%;
+    font-family: initial;
+    overflow: auto;
+}
+
+.camera img{
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+.camera span{
+    display: none;
+}
+
+.pen{
+    font-family: initial;
+    width: 100%;
+    margin-bottom: 20px;
+    overflow: auto;
+}
+
+.pen img{
+    float: left;
+    width: 50%;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.note{
+    width: 98%;
+    font-family: initial;
+    border-right: 5px solid #000;
+    margin-bottom: 20px;
+    overflow: auto;
+}
+
+.note img{
+    display: none;
+}
+
+.note blockquote{
+    float: right;
+    text-align: right;
+    padding-right: 10px;
+    margin-top: 3px;
+    margin-right: 3px;
+    margin-bottom: 5px;
+}
+
+.note blockquote p{
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-weight: 400;
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.25;
+    white-space: pre-wrap;
+}
+
+.border-post{
+    border-bottom: 1px dashed #DDDDDD;
+}
+
+/*====================*/
+
+.aboutus{
+    width: 100%;
+    margin-bottom: 15px;
+    overflow: auto;
+}
+
+.aboutus img{
+    float: left;
+    width: 50%;
+}
+
+.aboutus p{
+    white-space: pre-wrap;
+    line-height: 23px;
+}
+
+.overview{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.overview a{
+    color: black;
+}
+
+.canSelect a{
+    color: blue;
+}
+
+.notSelect{
+    color: black;
+}
+
+.content-s{
+    font-family: sans-serif;
+}
+
+.content-s small::after{
+    content: '\00A0 \2014';
+}
+
+.author{
+    font-size: 40px;
+    line-height: 60px;
+    font-family: cursive;
+    margin-bottom: 30px;
+}
+
+.overview-details{
+    text-align: center;
+    margin-top: 10px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.overview-details a{
+    color: black;
+}
