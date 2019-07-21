@@ -1,0 +1,51 @@
+.header {
+    display: flex;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: bold;
+    width: 518px;
+    justify-content: center;
+}
+
+.warp-month-year {
+    display: flex;
+}
+
+.arrow {
+    margin: 0 25px;
+    cursor: pointer;
+}
+
+#month {
+    margin: 0 35px 0 70px;
+}
+
+#year {
+    margin: 0 70px 0 35px;
+}
+
+td {
+    width: 70px;
+    height: 70px;
+    background: lightgray;
+    color: white;
+    font-size: 25px;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+th {
+    background: lightgray;
+}
+
+.today {
+    background: deepskyblue;
+}
+
+.normal {
+    background: dodgerblue;
+}
+
+.sunday {
+    background: red;
+}

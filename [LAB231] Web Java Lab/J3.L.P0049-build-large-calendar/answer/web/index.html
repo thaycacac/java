@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Calendar</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="./styles.css" />
+        <script src="./calendar.js" ></script>
+    </head>
+    <body>
+        <div class="wrap-all">
+            <div class="header">
+                <p class="arrow" onclick="previos()"><<</p>
+                <div class="warp-month-year">
+                    <span id="month">month</span>
+                    <span>==</span>
+                    <span id="year">year</span>
+                </div>
+                <p class="arrow" onclick="next()">>></p>
+            </div>
+            <div class="content">
+                <table>
+                    <thead>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                    </thead>
+                    <tbody id="calendar"></tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
