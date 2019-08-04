@@ -1,0 +1,18 @@
+th {
+    color: blue;
+}
+td {
+    color: #3C627B;
+}
+
+.blue {
+    color: blue;
+}
+
+#pageList > li {
+    padding: 5px;
+}
+
+.selected {
+    border: 1px solid black;
+}

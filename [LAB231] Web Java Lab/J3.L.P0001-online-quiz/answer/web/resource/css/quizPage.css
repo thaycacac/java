@@ -1,0 +1,18 @@
+#quizContainer {
+    padding-right: 150px;
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+#TimeSpan {
+    display: block;
+    width: 100%;
+    text-align: right;
+}
+
+#next {
+    float: right;
+}

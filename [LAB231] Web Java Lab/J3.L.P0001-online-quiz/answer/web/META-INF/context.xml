@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/J3.L.P0001">
+    <Environment name="connectionUrl" value="jdbc:sqlserver://localhost\\SQLEXPRESS:1433" type="java.lang.String" />
+    <Environment name="dbname" value="EasyCMS" type="java.lang.String" />
+    <Environment name="user" value="sa" type="java.lang.String" />
+    <Environment name="pass" value="123456" type="java.lang.String" />
+</Context>
