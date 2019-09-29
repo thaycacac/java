@@ -1,25 +1,0 @@
-
-LAB221 AssignmentType:Short AssignmentCode:J2.S.P0115LOC:50Slot(s):1
-Title
-	Verify input data
-Background Context
-       NA
-       
-Program Specifications
-Use swing library to create a program to verify input data.
-Information should be verified:
-- Student code: max length is 10, not contains special characters (@, #, $)
-- Student name: max length is 30
-- Birth Date: in format MM/DD/YYYY
-- Phone number: max length is 15, contain numeric characters only (0 – 9)
-- Email: max length is 30, contain only one “@” character, do not contain special characters (!, #, $)
-
-Function details:
-
-NA
-Expectation of User interface:
-The screen should be as:
-
-
-
-Guidelines

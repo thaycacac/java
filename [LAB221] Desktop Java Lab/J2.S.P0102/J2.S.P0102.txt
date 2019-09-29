@@ -1,20 +1,0 @@
-
-LAB221 AssignmentType:Short AssignmentCode:J2.S.P0102LOC:50Slot(s):1
-Title
-	Create a digital clock
-Background Context
-       NA
-       
-Program Specifications
-Create a program simulate a digital clock
- 
-Function details:
-
-Display current time on the form in format: hh:mm:ss
-Expectation of User interface:
-The screen should be as:
-
-
-
-
-Guidelines

@@ -1,30 +1,0 @@
-
-LAB221 AssignmentType:Short AssignmentCode:J2.S.P0118LOC:50Slot(s):1
-Title
-	Display metadata using JDBC
-Background Context
-Metadata is literally "data about data." This term refers to information about data itself -- perhaps the origin, size, formatting or other characteristics of a data item. In the database field, metadata is essential to understanding and interpreting the contents of a data warehouse
-       
-Program Specifications
-Create a program to view information of database using JDBC, information should be display:
-- Database product name
-- Database product version
-- Database driver version
-- Listing tables in the database
-
-
-Function details:
-
-NA
- Expectation of User interface:
-The screen should be as:
-
-- Database product name: MS SQL 
-- Database product version: 2008
-- Database driver version:	
-- Listing tables in the database:
-
-
-
-
-Guidelines
