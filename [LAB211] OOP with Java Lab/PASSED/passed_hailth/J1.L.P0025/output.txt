@@ -1,0 +1,2 @@
+As you can see, detecting whether a string is normalized can be quite efficient. A lot of the cost of normalizing in the "second row" is for the initialization of buffers. The cost of which is amortized when one is processing larger strings. 
+As it turns out, these buffers are rarely needed, so we may change the implementation at some point to speed up the common case for small strings even further. 
