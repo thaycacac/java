@@ -13,14 +13,16 @@ A student information consists of ID, Student Name, Semester, Course Name (There
 
 ### 1. Main Screen as below:
 
-`WELCOME TO STUDENT MANAGEMENT
+```
+WELCOME TO STUDENT MANAGEMENT
 
 1. Create
 2. Find and Sort
 3. Update/Delete
 4. Report
 5. Exit
-   (Please choose 1 to Create, 2 to Find and Sort, 3 to Update/Delete, 4 to Report and 5 to Exit program).`
+   (Please choose 1 to Create, 2 to Find and Sort, 3 to Update/Delete, 4 to Report and 5 to Exit program).
+```
 
 ### 2. Function details:
 
