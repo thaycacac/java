@@ -48,16 +48,12 @@ Nguyen Van B | Java | 1
 Nguyen Van C | Java | 1
 ```
 
-Technical Requirements
+### Technical Requirements
 
 1. Using Object-Oriented programming style
 2. Use only core Java functions and classes.
 
-Guidelines
-
-Slot Task Description
-
-1 - Code Design
+### Guidelines
 
 | Task                        | Description                                                                                     |
 | --------------------------- | ----------------------------------------------------------------------------------------------- |
