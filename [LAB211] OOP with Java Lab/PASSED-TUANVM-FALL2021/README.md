@@ -1,7 +1,8 @@
-Những lưu ý khi học LAB211 thầy Tuấn
+Những lưu ý khi học LAB211 thầy Tuấn:
+
 1.Trước khi code phải tạo khung chương trình
-	a. Khung chương trình nằm ở main, thể hiện logic của toàn bộ chương trình
-	b. Không code ở main. Main chỉ sử dụng để khai báo biến, gọi hàm, không code ở main
+  - Khung chương trình nằm ở main, thể hiện logic của toàn bộ chương trình
+  -Không code ở main. Main chỉ sử dụng để khai báo biến, gọi hàm, không code ở main
 2.Không được sử dụng biến toàn cục
 3.Phải comment cho Loop, Regex, Condition
 4.Đặt tên biến phải rõ ràng
