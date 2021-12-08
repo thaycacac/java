@@ -1,0 +1,5 @@
+Nguyen Huu Tien Anh; Bac Ninh; 1000
+Le Van Do; Nghe An; 2200
+Nguyen Le Tai; Dan Phuong; 1200
+Nguyen Dinh Phu; Thanh Hoa; 5700
+Nguyen Hong Son; Undefined; 9800
