@@ -1,0 +1,84 @@
+run:
+Menu:
+	1. Binary
+	2. Decimal
+	3. Hexadecimal
+	4. Exit
+Enter base input: abagaha
+Choice must be Integer
+Enter base input: -4
+Choice must be in range 1 to 4
+Enter base input: 1
+Enter base output: 1
+Base output could not same base input
+Enter base output: 2
+Enter value for convert: 12345
+Input is wrong format of base 2
+Enter value for convert: 10111101000010100001111111101000010001111110011111000111110000000000000000000011111111111111111
+Result convert: 29252453396308643932054618111
+Menu:
+	1. Binary
+	2. Decimal
+	3. Hexadecimal
+	4. Exit
+Enter base input: 1
+Enter base output: 3
+Enter value for convert: 10111101000010100001111111101000010001111110011111000111110000000000000000000011111111111111111
+Result convert: 5E850FF423F3E3E00001FFFF
+Menu:
+	1. Binary
+	2. Decimal
+	3. Hexadecimal
+	4. Exit
+Enter base input: 2
+Enter base output: 1
+Enter value for convert: 
+Input value could not be empty
+Enter value for convert: agagag
+Input is wrong format of base 10
+Enter value for convert: 29252453396308643932054618111
+Result convert: 10111101000010100001111111101000010001111110011111000111110000000000000000000011111111111111111
+Menu:
+	1. Binary
+	2. Decimal
+	3. Hexadecimal
+	4. Exit
+Enter base input: 2
+Enter base output: 3
+Enter value for convert: 29252453396308643932054618111
+Result convert: 5E850FF423F3E3E00001FFFF
+Menu:
+	1. Binary
+	2. Decimal
+	3. Hexadecimal
+	4. Exit
+Enter base input: 3
+Enter base output: 1
+Enter value for convert: 5E850FF423F3E3E00001FFFF
+Result convert: 010111101000010100001111111101000010001111110011111000111110000000000000000000011111111111111111
+Menu:
+	1. Binary
+	2. Decimal
+	3. Hexadecimal
+	4. Exit
+Enter base input: 3
+Enter base output: 1
+Enter value for convert: H
+Input is wrong format of base 16
+Enter value for convert: 5E850FF423F3E3E00001FFFF
+Result convert: 010111101000010100001111111101000010001111110011111000111110000000000000000000011111111111111111
+Menu:
+	1. Binary
+	2. Decimal
+	3. Hexadecimal
+	4. Exit
+Enter base input: 3
+Enter base output: 2
+Enter value for convert: 5E850FF423F3E3E00001FFFF
+Result convert: 29252453396308643932054618111
+Menu:
+	1. Binary
+	2. Decimal
+	3. Hexadecimal
+	4. Exit
+Enter base input: 

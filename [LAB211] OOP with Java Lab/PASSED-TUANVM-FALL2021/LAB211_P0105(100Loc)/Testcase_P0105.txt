@@ -1,0 +1,458 @@
+run:
+Main menu:
+	1. Add Storekeeper
+	2. Add product
+	3. Update product
+	4. Search product by Name, Category, Storekeeper, ReceiptDate
+	5. Sort product by Expiry date, Date of manufacture
+	6. Exit
+Your choice:
+Input could not be empty!!!
+Your choice:a
+Input must be integer
+Your choice:1.5
+Input must be integer
+Your choice:7
+Choice must be in range [1-6]
+Your choice:1
+=========Add Storekeeper===========
+List is empty!
+Enter new storekeeper: 
+Input could not be empty!!!
+Enter new storekeeper: Vinmart
+Main menu:
+	1. Add Storekeeper
+	2. Add product
+	3. Update product
+	4. Search product by Name, Category, Storekeeper, ReceiptDate
+	5. Sort product by Expiry date, Date of manufacture
+	6. Exit
+Your choice:1
+=========Add Storekeeper===========
+=========Storekeeper List===========
+ID   Name                
+0    Vinmart             
+Enter new storekeeper: Vinmart
+Store is exist
+Main menu:
+	1. Add Storekeeper
+	2. Add product
+	3. Update product
+	4. Search product by Name, Category, Storekeeper, ReceiptDate
+	5. Sort product by Expiry date, Date of manufacture
+	6. Exit
+Your choice:1
+=========Add Storekeeper===========
+=========Storekeeper List===========
+ID   Name                
+0    Vinmart             
+Enter new storekeeper: Aeon
+Main menu:
+	1. Add Storekeeper
+	2. Add product
+	3. Update product
+	4. Search product by Name, Category, Storekeeper, ReceiptDate
+	5. Sort product by Expiry date, Date of manufacture
+	6. Exit
+Your choice:1
+=========Add Storekeeper===========
+=========Storekeeper List===========
+ID   Name                
+0    Vinmart             
+1    Aeon                
+Enter new storekeeper: BigC
+Main menu:
+	1. Add Storekeeper
+	2. Add product
+	3. Update product
+	4. Search product by Name, Category, Storekeeper, ReceiptDate
+	5. Sort product by Expiry date, Date of manufacture
+	6. Exit
+Your choice:1
+=========Add Storekeeper===========
+=========Storekeeper List===========
+ID   Name                
+0    Vinmart             
+1    Aeon                
+2    BigC                
+Enter new storekeeper: Circle K
+Main menu:
+	1. Add Storekeeper
+	2. Add product
+	3. Update product
+	4. Search product by Name, Category, Storekeeper, ReceiptDate
+	5. Sort product by Expiry date, Date of manufacture
+	6. Exit
+Your choice:1
+=========Add Storekeeper===========
+=========Storekeeper List===========
+ID   Name                
+0    Vinmart             
+1    Aeon                
+2    BigC                
+3    Circle K            
+Enter new storekeeper: 7Seven
+Main menu:
+	1. Add Storekeeper
+	2. Add product
+	3. Update product
+	4. Search product by Name, Category, Storekeeper, ReceiptDate
+	5. Sort product by Expiry date, Date of manufacture
+	6. Exit
+Your choice:2
+=========Add Product===========
+List is empty!
+Enter product's id: 1
+Enter product's name: Tiramisu
+Enter product's location: Pmoment
+Enter product's price: -4
+Price must be a positive number.
+Enter product's price: 45000
+Enter product's manufacture date[dd/MM/YYYY]: 25/11/2021
+Date of manufacture must be in the past
+Enter product's manufacture date[dd/MM/YYYY]: 1/9/2021
+Enter product's expiry date[dd/MM/YYYY]: 1/8/2021
+Expiry date must be after date of manufacture
+Enter product's expiry date[dd/MM/YYYY]: 10/9/2021
+Enter category: Cake
+=========Storekeeper List===========
+ID   Name                
+0    Vinmart             
+1    Aeon                
+2    BigC                
+3    Circle K            
+4    7Seven              
+Choose storekeeper: 5
+List store not have a store.
+Choose storekeeper: 1
+Enter receipt date: 1/8/2021
+Receipt date must be from 01/09/2021to 10/09/2021
+Enter receipt date: 11/9/2021
+Receipt date must be from 01/09/2021to 10/09/2021
+Enter receipt date: 2/9/2021
+Main menu:
+	1. Add Storekeeper
+	2. Add product
+	3. Update product
+	4. Search product by Name, Category, Storekeeper, ReceiptDate
+	5. Sort product by Expiry date, Date of manufacture
+	6. Exit
+Your choice:2
+=========Add Product===========
+==========Product List===========
+Id Name           Location  Price     Manufacture date    Expiry date         Category       Storekeeper         Receipt date   
+1  Tiramisu       Pmoment   45000     01/09/2021          10/09/2021          Cake           Aeon                02/09/2021     
+Enter product's id: 1
+Product is exist. Do you want to add new product?[y|n]: n
+Main menu:
+	1. Add Storekeeper
+	2. Add product
+	3. Update product
+	4. Search product by Name, Category, Storekeeper, ReceiptDate
+	5. Sort product by Expiry date, Date of manufacture
+	6. Exit
+Your choice:2
+=========Add Product===========
+==========Product List===========
+Id Name           Location  Price     Manufacture date    Expiry date         Category       Storekeeper         Receipt date   
+1  Tiramisu       Pmoment   45000     01/09/2021          10/09/2021          Cake           Aeon                02/09/2021     
+Enter product's id: 1
+Product is exist. Do you want to add new product?[y|n]: y
+Enter product's id: 2
+Enter product's name: Mango Cake
+Enter product's location: Pmoment
+Enter product's price: 55000
+Enter product's manufacture date[dd/MM/YYYY]: 30/8/2021
+Enter product's expiry date[dd/MM/YYYY]: 11/9/2021
+Enter category: Cake
+=========Storekeeper List===========
+ID   Name                
+0    Vinmart             
+1    Aeon                
+2    BigC                
+3    Circle K            
+4    7Seven              
+Choose storekeeper: 4
+Enter receipt date: 3/9/2021
+Main menu:
+	1. Add Storekeeper
+	2. Add product
+	3. Update product
+	4. Search product by Name, Category, Storekeeper, ReceiptDate
+	5. Sort product by Expiry date, Date of manufacture
+	6. Exit
+Your choice:2
+=========Add Product===========
+==========Product List===========
+Id Name           Location  Price     Manufacture date    Expiry date         Category       Storekeeper         Receipt date   
+1  Tiramisu       Pmoment   45000     01/09/2021          10/09/2021          Cake           Aeon                02/09/2021     
+2  Mango Cake     Pmoment   55000     30/08/2021          11/09/2021          Cake           7Seven              03/09/2021     
+Enter product's id: 3
+Enter product's name: Cappuccino
+Enter product's location: Highland
+Enter product's price: 30000
+Enter product's manufacture date[dd/MM/YYYY]: 10/9/2021
+Enter product's expiry date[dd/MM/YYYY]: 10/9/2021
+Enter category: Cake
+=========Storekeeper List===========
+ID   Name                
+0    Vinmart             
+1    Aeon                
+2    BigC                
+3    Circle K            
+4    7Seven              
+Choose storekeeper: 1
+Enter receipt date: 10/9/2021
+Main menu:
+	1. Add Storekeeper
+	2. Add product
+	3. Update product
+	4. Search product by Name, Category, Storekeeper, ReceiptDate
+	5. Sort product by Expiry date, Date of manufacture
+	6. Exit
+Your choice:2
+=========Add Product===========
+==========Product List===========
+Id Name           Location  Price     Manufacture date    Expiry date         Category       Storekeeper         Receipt date   
+1  Tiramisu       Pmoment   45000     01/09/2021          10/09/2021          Cake           Aeon                02/09/2021     
+2  Mango Cake     Pmoment   55000     30/08/2021          11/09/2021          Cake           7Seven              03/09/2021     
+3  Cappuccino     Highland  30000     10/09/2021          10/09/2021          Cake           Aeon                10/09/2021     
+Enter product's id: 4
+Enter product's name: Tiramisu
+Enter product's location: Seventeen
+Enter product's price: 35000
+Enter product's manufacture date[dd/MM/YYYY]: 20/8/2021
+Enter product's expiry date[dd/MM/YYYY]: 11/9/2021
+Enter category: Cake
+=========Storekeeper List===========
+ID   Name                
+0    Vinmart             
+1    Aeon                
+2    BigC                
+3    Circle K            
+4    7Seven              
+Choose storekeeper: 1
+Enter receipt date: 2/9/2021
+Main menu:
+	1. Add Storekeeper
+	2. Add product
+	3. Update product
+	4. Search product by Name, Category, Storekeeper, ReceiptDate
+	5. Sort product by Expiry date, Date of manufacture
+	6. Exit
+Your choice:2
+=========Add Product===========
+==========Product List===========
+Id Name           Location  Price     Manufacture date    Expiry date         Category       Storekeeper         Receipt date   
+1  Tiramisu       Pmoment   45000     01/09/2021          10/09/2021          Cake           Aeon                02/09/2021     
+2  Mango Cake     Pmoment   55000     30/08/2021          11/09/2021          Cake           7Seven              03/09/2021     
+3  Cappuccino     Highland  30000     10/09/2021          10/09/2021          Cake           Aeon                10/09/2021     
+4  Tiramisu       Seventeen 35000     20/08/2021          11/09/2021          Cake           Aeon                02/09/2021     
+Enter product's id: 5
+Enter product's name: ChocoMint
+Enter product's location: Swendent
+Enter product's price: 15000
+Enter product's manufacture date[dd/MM/YYYY]: 2/9/2021
+Enter product's expiry date[dd/MM/YYYY]: 2/9/2021
+Enter category: Ice Cream
+=========Storekeeper List===========
+ID   Name                
+0    Vinmart             
+1    Aeon                
+2    BigC                
+3    Circle K            
+4    7Seven              
+Choose storekeeper: 3
+Enter receipt date: 2/9/2021
+Main menu:
+	1. Add Storekeeper
+	2. Add product
+	3. Update product
+	4. Search product by Name, Category, Storekeeper, ReceiptDate
+	5. Sort product by Expiry date, Date of manufacture
+	6. Exit
+Your choice:4
+=========Search===========
+Menu Search:
+1. Search by Name
+2. Search by category
+3. Search by storekeeper
+4. Search by receipt date
+Your choice:1
+=========Search By Name===========
+Enter name for searching: Green tea
+Product is not found!
+Main menu:
+	1. Add Storekeeper
+	2. Add product
+	3. Update product
+	4. Search product by Name, Category, Storekeeper, ReceiptDate
+	5. Sort product by Expiry date, Date of manufacture
+	6. Exit
+Your choice:4
+=========Search===========
+Menu Search:
+1. Search by Name
+2. Search by category
+3. Search by storekeeper
+4. Search by receipt date
+Your choice:1
+=========Search By Name===========
+Enter name for searching: Tiramisu
+==========Product List===========
+Id Name           Location  Price     Manufacture date    Expiry date         Category       Storekeeper         Receipt date   
+1  Tiramisu       Pmoment   45000     01/09/2021          10/09/2021          Cake           Aeon                02/09/2021     
+4  Tiramisu       Seventeen 35000     20/08/2021          11/09/2021          Cake           Aeon                02/09/2021     
+Main menu:
+	1. Add Storekeeper
+	2. Add product
+	3. Update product
+	4. Search product by Name, Category, Storekeeper, ReceiptDate
+	5. Sort product by Expiry date, Date of manufacture
+	6. Exit
+Your choice:4
+=========Search===========
+Menu Search:
+1. Search by Name
+2. Search by category
+3. Search by storekeeper
+4. Search by receipt date
+Your choice:2
+=========Search By Category===========
+Enter category for searching: Coffee
+Product is not found!
+Main menu:
+	1. Add Storekeeper
+	2. Add product
+	3. Update product
+	4. Search product by Name, Category, Storekeeper, ReceiptDate
+	5. Sort product by Expiry date, Date of manufacture
+	6. Exit
+Your choice:4
+=========Search===========
+Menu Search:
+1. Search by Name
+2. Search by category
+3. Search by storekeeper
+4. Search by receipt date
+Your choice:2
+=========Search By Category===========
+Enter category for searching: Cake
+==========Product List===========
+Id Name           Location  Price     Manufacture date    Expiry date         Category       Storekeeper         Receipt date   
+1  Tiramisu       Pmoment   45000     01/09/2021          10/09/2021          Cake           Aeon                02/09/2021     
+2  Mango Cake     Pmoment   55000     30/08/2021          11/09/2021          Cake           7Seven              03/09/2021     
+3  Cappuccino     Highland  30000     10/09/2021          10/09/2021          Cake           Aeon                10/09/2021     
+4  Tiramisu       Seventeen 35000     20/08/2021          11/09/2021          Cake           Aeon                02/09/2021     
+Main menu:
+	1. Add Storekeeper
+	2. Add product
+	3. Update product
+	4. Search product by Name, Category, Storekeeper, ReceiptDate
+	5. Sort product by Expiry date, Date of manufacture
+	6. Exit
+Your choice:4
+=========Search===========
+Menu Search:
+1. Search by Name
+2. Search by category
+3. Search by storekeeper
+4. Search by receipt date
+Your choice:3
+=========Search By Storekeeper===========
+Enter storekeeper name for searching: 1theK
+Product is not found!
+Main menu:
+	1. Add Storekeeper
+	2. Add product
+	3. Update product
+	4. Search product by Name, Category, Storekeeper, ReceiptDate
+	5. Sort product by Expiry date, Date of manufacture
+	6. Exit
+Your choice:4
+=========Search===========
+Menu Search:
+1. Search by Name
+2. Search by category
+3. Search by storekeeper
+4. Search by receipt date
+Your choice:3
+=========Search By Storekeeper===========
+Enter storekeeper name for searching: Aeon
+==========Product List===========
+Id Name           Location  Price     Manufacture date    Expiry date         Category       Storekeeper         Receipt date   
+1  Tiramisu       Pmoment   45000     01/09/2021          10/09/2021          Cake           Aeon                02/09/2021     
+3  Cappuccino     Highland  30000     10/09/2021          10/09/2021          Cake           Aeon                10/09/2021     
+4  Tiramisu       Seventeen 35000     20/08/2021          11/09/2021          Cake           Aeon                02/09/2021     
+Main menu:
+	1. Add Storekeeper
+	2. Add product
+	3. Update product
+	4. Search product by Name, Category, Storekeeper, ReceiptDate
+	5. Sort product by Expiry date, Date of manufacture
+	6. Exit
+Your choice:4
+=========Search===========
+Menu Search:
+1. Search by Name
+2. Search by category
+3. Search by storekeeper
+4. Search by receipt date
+Your choice:4
+=========Search By Receipt Date===========
+Enter receipt date for search: 20/10/2021
+Product is not found!
+Main menu:
+	1. Add Storekeeper
+	2. Add product
+	3. Update product
+	4. Search product by Name, Category, Storekeeper, ReceiptDate
+	5. Sort product by Expiry date, Date of manufacture
+	6. Exit
+Your choice:4
+=========Search===========
+Menu Search:
+1. Search by Name
+2. Search by category
+3. Search by storekeeper
+4. Search by receipt date
+Your choice:4
+=========Search By Receipt Date===========
+Enter receipt date for search: 2/9/2021
+==========Product List===========
+Id Name           Location  Price     Manufacture date    Expiry date         Category       Storekeeper         Receipt date   
+1  Tiramisu       Pmoment   45000     01/09/2021          10/09/2021          Cake           Aeon                02/09/2021     
+4  Tiramisu       Seventeen 35000     20/08/2021          11/09/2021          Cake           Aeon                02/09/2021     
+5  ChocoMint      Swendent  15000     02/09/2021          02/09/2021          Ice Cream      Circle K            02/09/2021     
+Main menu:
+	1. Add Storekeeper
+	2. Add product
+	3. Update product
+	4. Search product by Name, Category, Storekeeper, ReceiptDate
+	5. Sort product by Expiry date, Date of manufacture
+	6. Exit
+Your choice:5
+=========Sort===========
+==========Product List===========
+Id Name           Location  Price     Manufacture date    Expiry date         Category       Storekeeper         Receipt date   
+1  Tiramisu       Pmoment   45000     01/09/2021          10/09/2021          Cake           Aeon                02/09/2021     
+2  Mango Cake     Pmoment   55000     30/08/2021          11/09/2021          Cake           7Seven              03/09/2021     
+3  Cappuccino     Highland  30000     10/09/2021          10/09/2021          Cake           Aeon                10/09/2021     
+4  Tiramisu       Seventeen 35000     20/08/2021          11/09/2021          Cake           Aeon                02/09/2021     
+5  ChocoMint      Swendent  15000     02/09/2021          02/09/2021          Ice Cream      Circle K            02/09/2021     
+==========Product List===========
+Id Name           Location  Price     Manufacture date    Expiry date         Category       Storekeeper         Receipt date   
+5  ChocoMint      Swendent  15000     02/09/2021          02/09/2021          Ice Cream      Circle K            02/09/2021     
+1  Tiramisu       Pmoment   45000     01/09/2021          10/09/2021          Cake           Aeon                02/09/2021     
+3  Cappuccino     Highland  30000     10/09/2021          10/09/2021          Cake           Aeon                10/09/2021     
+4  Tiramisu       Seventeen 35000     20/08/2021          11/09/2021          Cake           Aeon                02/09/2021     
+2  Mango Cake     Pmoment   55000     30/08/2021          11/09/2021          Cake           7Seven              03/09/2021     
+Main menu:
+	1. Add Storekeeper
+	2. Add product
+	3. Update product
+	4. Search product by Name, Category, Storekeeper, ReceiptDate
+	5. Sort product by Expiry date, Date of manufacture
+	6. Exit
+Your choice:6
+BUILD SUCCESSFUL (total time: 13 minutes 32 seconds)
