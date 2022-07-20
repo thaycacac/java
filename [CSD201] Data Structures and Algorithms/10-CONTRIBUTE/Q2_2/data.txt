@@ -1,0 +1,17 @@
+line 0 - The next line is line 1 (f1)
+ A  B  C  D  E   F  G  X  
+ 4  9  1  5  3   6  2  5 
+ 2  5  2  6  4   7  3  4
+line 4 - The next line is line 5 (f2)
+ C  D  E  F  G  H  I
+ 5  1  7  3  6  2  4
+ 1  6  4  8  2  3  5
+line 8 - The next line is line 9 (f3)
+ C  D  E  F  G  H   I  J
+ 9  5 10  3  7  2   4  6
+ 2  1  6  4  8  3   5  7
+line 12 - The next line is line 13 (f4)
+ C  D  E  F  G  H   I  J
+ 9  5 10  3  7  2   4  6
+ 2  1  6  4  8  3   5  7
+END OF DATA

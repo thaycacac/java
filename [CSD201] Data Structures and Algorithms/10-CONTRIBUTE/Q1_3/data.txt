@@ -1,0 +1,13 @@
+Line 0 - The next line is line 1 (f1)
+ A    B   C    D   E    F     G
+ 9    3    7    2    6    4   105
+Line 3 - The next line is line 4 (f2)
+ C   D    E    F    I
+ 9   6    8    2    6
+Line 6 - The next line is line 7 (f3)
+ C   D    E    F    I
+ 9   5    3    5    6
+Line 9 - The next line is line 10 (f4)
+ C   D    E    F    I    J
+ 9    6    5   13   2   1
+END
