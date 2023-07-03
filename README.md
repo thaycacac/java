@@ -40,3 +40,8 @@ This repo include all source code java when I learned in university.
 ### LAB231 - Web Java Lab
 
 Just included two lesson that I passed (TuanVM)
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=thaycacac/java&type=Date)](https://star-history.com/#thaycacac/java&Date)
+
